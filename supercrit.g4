@@ -31,12 +31,19 @@ parenthesis: OPEN_PAR NUMBER CLOSE_PAR;
 
 // Arithmetic operators (+, -, *, /, %, ^)  
 
+/*start : expr | <EOF> ;
+expr : '-' expr     # UMINUS
+   | expr mulop expr # MULOPGRP
+   | expr addop expr # ADDOPGRP
+   | '(' expr ')'   # PARENGRP
+   | NUMBER      # DOUBLE
+   ;
 
+addop : '+' | '-' ;
+
+mulop : '*' | '/' | '%' | '^';*/
 
 // Assignment operators (=, +=, -=, *=, /=, ^=, %=)  
-
-
-
 
 // Conditional statements(<, <=, >, >=, ==, !=, and, or, not)  
 
