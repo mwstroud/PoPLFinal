@@ -12,23 +12,40 @@ grammar supercrit;
 ////////////////////////////////////////////////////////
 
 // Defines the relations between the tokens 
+// Base of the entire parser is the file which is composed of a block and then the end-of-file
+//file: block EOF ;
 
-// Basic Expressions PEMDAS
-base: NUMBER;
-parenthesis: OPEN_PAR NUMBER CLOSE_PAR;
+// A block will be the most general Python3 code which will be any number of statements strung together
+//block: statement*;
 
+// A statement will be composed of the project requirements: if, while, for, assignment, arithmetic, conditionals, variables, etc.
+//statement
+    //: assignment
+    //| if_block
+    //| while_block
+    //| for_block
+    //;
+// if/else blocks
+// I want to define a tab block that will be used for if,while, and for loops. It is a tab followed by a statement any number of times.
 
+//tab_block
+    //: (TAB statement)*;
 
-// if/else blocks 
-
-//if: IF conditional COLON NEWLINE statement (ELif conditional COLON NEWLINE statement)* (ELSE COLON NEWLINE statement)
+//if_block
+    //: IF condition COLON NEWLINE tab_block (ELIF condition COLON NEWLINE tab_block)* (ELSE COLON NEWLINE tab_block)?
+    //;
 
 // Variable definitions
 
 
 // while and for Loops  
+//while_block
+    //: WHILE condition COLON NEWLINE tab_block
+    //;
 
-
+//for_block
+    //: FOR condition COLON NEWLINE tab_block
+    //;
 // Arithmetic operators (+, -, *, /, %, ^)  
 
 /*start : expr | <EOF> ;
@@ -99,8 +116,10 @@ CLOSE_BRAC: ']';
 IF: 'if';
 ELIF: 'elif';
 ELSE: 'else';
-
-// Variable definitions: This is a Parser Rule
+TAB: [\t];
+// Variable definitions- Rules for Python variables: must start with a letter or underscore character. cannot start with a number fragment
+// case sensitive, only alpha-numeric A-z, 0-9
+VAR: [a-zA-Z_] [a-zA-Z_0-9]*;
 
 // while and for Loops  
 WHILE: 'while';
