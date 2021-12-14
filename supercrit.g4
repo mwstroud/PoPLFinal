@@ -46,23 +46,22 @@ grammar supercrit;
 //for_block
     //: FOR condition COLON NEWLINE tab_block
     //;
-// Arithmetic operators (+, -, *, /, %, ^)  
+// Arithmetic operators (+, -, *, /, %, ^)
+start : expr | <EOF> ;
 
-/*start : expr | <EOF> ;
-expr : '-' expr     # UMINUS
-   | expr mulop expr # MULOPGRP
-   | expr addop expr # ADDOPGRP
-   | '(' expr ')'   # PARENGRP
-   | NUMBER      # DOUBLE
-   ;
-
-addop : '+' | '-' ;
-
-mulop : '*' | '/' | '%' | '^';*/
-
-// Assignment operators (=, +=, -=, *=, /=, ^=, %=)  
-
-// Conditional statements(<, <=, >, >=, ==, !=, and, or, not)  
+expr
+    : '-' expr
+    | expr POW expr
+    | expr (TIMES | DIV) expr
+    | expr (PLUS | MINUS) expr
+    | expr MOD expr
+    | expr (LESS | LESS_EQ | GREATER | GREATER_EQ) expr // Conditional statements(<, <=, >, >=, ==, !=, and, or, not)    
+    | expr (EQUAL | NOT_EQUAL) expr
+    | expr AND expr 
+    | expr OR expr
+    | expr NOT expr
+    | expr (ASSIGN | INCREMENT | DECREMENT | MULT_EQ | DIV_EQ | POW_EQ | MOD_EQ) expr // Assignment operators (=, +=, -=, *=, /=, ^=, %=) 
+    ;
 
 
 
