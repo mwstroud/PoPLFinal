@@ -48,10 +48,15 @@ while_block
 for_block
     : FOR OPEN_PAR? conditional CLOSE_PAR? COLON NEWLINE tab_block
     ;
+
 // print calls
 print
     :'print'OPEN_PAR expr CLOSE_PAR
     ;
+
+// operate-able items (int, float, and string). int and float can have any operator act on them. string can just have addition.
+
+
 // Arithmetic operators (+, -, *, /, %, ^)
 statement
     : expr
@@ -105,21 +110,22 @@ fragment DIGIT: [0-9];
 fragment NONZERO: [1-9];
 fragment LOWERCASE: [a-z];
 fragment UPPERCASE: [A-Z];
-fragment INT:                           // option for negative numbers, must start with nonzero number and continue with any digit or just be 0. This allows for negative 0 which is...
+INT:                           // option for negative numbers, must start with nonzero number and continue with any digit or just be 0. This allows for negative 0 which is...
     MINUS? NONZERO DIGIT*               // apparently allowed in Python3 so this works.
     | '0'
     ;
 fragment DECIMAL:'.' DIGIT+;
-fragment FLOAT:                         // Either have  """.""" or """. numbers for floats
+FLOAT:                         // Either have  """.""" or """. numbers for floats
     INT? DECIMAL 
     | INT '.'
     ;
-fragment NUMBER: INT | FLOAT;
+NUMBER: INT | FLOAT;
 
+STRING: '"' [a-zA-Z_0-9]* '"';
 // Defining whitespace and newlines
-WHITESPACE: (' ' | NEWLINE | INDENT) ;
+WHITESPACE: (' ' | NEWLINE | TAB) ;
 NEWLINE: '\n';
-fragment INDENT: '\t';
+TAB: '\t';
 
 // Defining colons, parenthesis, brackets
 COLON: ':';
@@ -132,7 +138,6 @@ CLOSE_BRAC: ']';
 IF: 'if';
 ELIF: 'elif';
 ELSE: 'else';
-TAB: [\t];
 // Variable definitions- Rules for Python variables: must start with a letter or underscore character. cannot start with a number fragment
 // case sensitive, only alpha-numeric A-z, 0-9
 VAR: [a-zA-Z_] [a-zA-Z_0-9]*;
