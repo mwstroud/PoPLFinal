@@ -15,6 +15,7 @@ grammar supercrit;
 // Base of the entire parser is the start which is composed of a block and then the end-of-file
 start: block EOF ;
 
+
 // A block will be the most general Python3 code which will be any number of statements strung together
 block
     : line*
@@ -50,8 +51,12 @@ for_block
     ;
 
 // print calls
-print
-    :'print'OPEN_PAR expr CLOSE_PAR
+
+function
+    : 'str' OPEN_PAR expr CLOSE_PAR 
+    | 'int' OPEN_PAR expr CLOSE_PAR
+    | 'range' OPEN_PAR expr CLOSE_PAR
+    | 'print' OPEN_PAR expr CLOSE_PAR
     ;
 
 // operate-able items (int, float, and string). int and float can have any operator act on them. string can just have addition.
@@ -87,7 +92,9 @@ conditional
 assignment
     : VAR (ASSIGN | INCREMENT | DECREMENT | MULT_EQ | DIV_EQ | POW_EQ | MOD_EQ) expr
     ;
+
 // Support for comments 
+commment: COMMENT;
 
 // BONUS #1: Syntax error message (this is where we did the accept/reject string. If the given code aka. grammar is not a Python language, reject it.
 // In other words, throw a syntax error message.)
