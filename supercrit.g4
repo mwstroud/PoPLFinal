@@ -12,59 +12,72 @@ grammar supercrit;
 ////////////////////////////////////////////////////////
 
 // Defines the relations between the tokens 
-// Base of the entire parser is the file which is composed of a block and then the end-of-file
-//file: block EOF ;
+// Base of the entire parser is the start which is composed of a block and then the end-of-file
+start: block EOF ;
 
 // A block will be the most general Python3 code which will be any number of statements strung together
-//block: statement*;
+block
+    : line*
+    | if_block*
+    | while_block*
+    | for_block*
+    ;
 
-// A statement will be composed of the project requirements: if, while, for, assignment, arithmetic, conditionals, variables, etc.
-//statement
-    //: assignment
-    //| if_block
-    //| while_block
-    //| for_block
-    //;
+// A statement will be composed of the project requirements: if, while, for, and line which are expressions with a newline, etc.
+line
+    : assignment NEWLINE
+    ;
 // if/else blocks
-// I want to define a tab block that will be used for if,while, and for loops. It is a tab followed by a statement any number of times.
+// I want to define a tab block that will be used for if,while, and for loops. It is a tab followed by a line any number of times.
 
-//tab_block
-    //: (TAB statement)*;
+tab_block
+    : (TAB line)*;
 
-//if_block
-    //: IF condition COLON NEWLINE tab_block (ELIF condition COLON NEWLINE tab_block)* (ELSE COLON NEWLINE tab_block)?
-    //;
+if_block
+    : IF OPEN_PAR? conditional CLOSE_PAR? COLON NEWLINE tab_block (ELIF OPEN_PAR? conditional CLOSE_PAR? COLON NEWLINE tab_block)* (ELSE COLON NEWLINE tab_block)?
+    ;
 
 // Variable definitions
 
 
 // while and for Loops  
-//while_block
-    //: WHILE condition COLON NEWLINE tab_block
-    //;
+while_block
+    : WHILE OPEN_PAR? conditional CLOSE_PAR? COLON NEWLINE tab_block
+    ;
 
-//for_block
-    //: FOR condition COLON NEWLINE tab_block
-    //;
+for_block
+    : FOR OPEN_PAR? conditional CLOSE_PAR? COLON NEWLINE tab_block
+    ;
 // Arithmetic operators (+, -, *, /, %, ^)
-start : expr | <EOF> ;
+statement
+    : expr
+    | conditional
+    | assignment
+    ;
+
+////////////////////////////////////////////////// Need to define that an expression is composed of strings or ints or floats.
 
 expr
     : '-' expr
     | expr POW expr
     | expr (TIMES | DIV) expr
     | expr (PLUS | MINUS) expr
-    | expr MOD expr
-    | expr (LESS | LESS_EQ | GREATER | GREATER_EQ) expr // Conditional statements(<, <=, >, >=, ==, !=, and, or, not)    
+    | expr MOD expr  
     | expr (EQUAL | NOT_EQUAL) expr
     | expr AND expr 
     | expr OR expr
     | expr NOT expr
-    | expr (ASSIGN | INCREMENT | DECREMENT | MULT_EQ | DIV_EQ | POW_EQ | MOD_EQ) expr // Assignment operators (=, +=, -=, *=, /=, ^=, %=) 
     ;
 
+// Conditional statements(<, <=, >, >=, ==, !=, and, or, not)
+conditional
+    :expr (LESS | LESS_EQ | GREATER | GREATER_EQ) expr
+    ;
 
-
+// Assignment operators (=, +=, -=, *=, /=, ^=, %=)
+assignment
+    : VAR (ASSIGN | INCREMENT | DECREMENT | MULT_EQ | DIV_EQ | POW_EQ | MOD_EQ) expr
+    ;
 // Support for comments 
 
 // BONUS #1: Syntax error message (this is where we did the accept/reject string. If the given code aka. grammar is not a Python language, reject it.
@@ -101,7 +114,7 @@ fragment NUMBER: INT | FLOAT;
 
 // Defining whitespace and newlines
 WHITESPACE: (' ' | NEWLINE | INDENT) ;
-fragment NEWLINE: ('\r'? '\n' | '\r')+ ;
+NEWLINE: '\n';
 fragment INDENT: '\t';
 
 // Defining colons, parenthesis, brackets
@@ -123,7 +136,8 @@ VAR: [a-zA-Z_] [a-zA-Z_0-9]*;
 // while and for Loops  
 WHILE: 'while';
 FOR: 'for';
-
+BREAK: 'break';
+CONTINUE: 'continue';
 // Arithmetic operators (+, -, *, /, %, ^)  
 
 PLUS: '+';
