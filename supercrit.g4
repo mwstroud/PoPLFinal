@@ -1,5 +1,5 @@
 // Grammar developed for PoPL: CS 4450 Final Project
-// team: supercritical pitchfork ;   members: Pete Canfield, Cloe Jones, Matt Stroud
+// team: supercritical pitchfork ;   members: Pete Canfield, Chloe Jones, Matt Stroud
 // 12/15/21
 
 // Grammar for Antlr4 on Python3 target
@@ -47,6 +47,10 @@ while_block
 
 for_block
     : FOR OPEN_PAR? conditional CLOSE_PAR? COLON NEWLINE tab_block
+    ;
+// print calls
+print
+    :'print'OPEN_PAR expr CLOSE_PAR
     ;
 // Arithmetic operators (+, -, *, /, %, ^)
 statement
