@@ -2,7 +2,7 @@
 
 12/15/21
 CS 4450
-Pete Canfield, Cloe Jones, Matt Stroud
+Pete Canfield, Chloe Jones, Matt Stroud
 
 Antlr4 grammar defines lexer and parser rules for Python3 target language.
 The lexer and parser are also defined so that it can parse Python3 code. An example script is provided for testing.
