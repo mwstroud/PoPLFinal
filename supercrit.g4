@@ -68,6 +68,8 @@ statement
 
 expr
     : '-' expr
+    | NUMBER
+    | STRING
     | expr POW expr
     | expr (TIMES | DIV) expr
     | expr (PLUS | MINUS) expr
