@@ -11,8 +11,8 @@ else:
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\62")
-        buf.write("\u0127\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\61")
+        buf.write("\u0158\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
         buf.write("\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\4\16")
         buf.write("\t\16\3\2\7\2\36\n\2\f\2\16\2!\13\2\3\2\3\2\3\3\3\3\3")
         buf.write("\3\3\3\5\3)\n\3\3\4\3\4\3\4\3\4\5\4/\n\4\3\5\3\5\3\6\3")
@@ -26,121 +26,150 @@ def serializedATN():
         buf.write("\u0089\n\7\f\7\16\7\u008c\13\7\3\7\3\7\3\7\3\7\5\7\u0092")
         buf.write("\n\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\7\7\u009f")
         buf.write("\n\7\f\7\16\7\u00a2\13\7\3\7\3\7\3\7\3\7\5\7\u00a8\n\7")
-        buf.write("\5\7\u00aa\n\7\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b")
-        buf.write("\3\b\3\b\3\b\3\b\5\b\u00ba\n\b\3\t\3\t\3\t\3\t\3\t\3\t")
-        buf.write("\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\5\t\u00ca\n\t\3\n\3\n")
-        buf.write("\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\7")
-        buf.write("\n\u00db\n\n\f\n\16\n\u00de\13\n\3\n\3\n\3\n\3\n\3\n\3")
-        buf.write("\n\3\n\3\n\5\n\u00e8\n\n\3\13\3\13\3\13\5\13\u00ed\n\13")
-        buf.write("\3\f\3\f\3\f\3\f\3\f\5\f\u00f4\n\f\3\f\3\f\3\f\3\f\3\f")
-        buf.write("\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3")
-        buf.write("\f\3\f\3\f\3\f\3\f\3\f\7\f\u010e\n\f\f\f\16\f\u0111\13")
-        buf.write("\f\3\r\3\r\3\r\3\r\3\16\3\16\7\16\u0119\n\16\f\16\16\16")
-        buf.write("\u011c\13\16\3\16\3\16\7\16\u0120\n\16\f\16\16\16\u0123")
-        buf.write("\13\16\3\16\3\16\3\16\2\3\26\17\2\4\6\b\n\f\16\20\22\24")
-        buf.write("\26\30\32\2\7\3\2\36\37\3\2\34\35\3\2-.\3\2),\3\2\"(\2")
-        buf.write("\u0148\2\37\3\2\2\2\4(\3\2\2\2\6.\3\2\2\2\b\60\3\2\2\2")
-        buf.write("\n\66\3\2\2\2\f\u00a9\3\2\2\2\16\u00b9\3\2\2\2\20\u00c9")
-        buf.write("\3\2\2\2\22\u00e7\3\2\2\2\24\u00ec\3\2\2\2\26\u00f3\3")
-        buf.write("\2\2\2\30\u0112\3\2\2\2\32\u0116\3\2\2\2\34\36\5\4\3\2")
-        buf.write("\35\34\3\2\2\2\36!\3\2\2\2\37\35\3\2\2\2\37 \3\2\2\2 ")
-        buf.write("\"\3\2\2\2!\37\3\2\2\2\"#\7\2\2\3#\3\3\2\2\2$)\5\6\4\2")
-        buf.write("%)\5\f\7\2&)\5\16\b\2\')\5\20\t\2($\3\2\2\2(%\3\2\2\2")
-        buf.write("(&\3\2\2\2(\'\3\2\2\2)\5\3\2\2\2*/\5\32\16\2+/\5\b\5\2")
-        buf.write(",/\7\r\2\2-/\7\f\2\2.*\3\2\2\2.+\3\2\2\2.,\3\2\2\2.-\3")
-        buf.write("\2\2\2/\7\3\2\2\2\60\61\7\62\2\2\61\t\3\2\2\2\62\63\7")
-        buf.write("\16\2\2\63\65\5\6\4\2\64\62\3\2\2\2\658\3\2\2\2\66\64")
-        buf.write("\3\2\2\2\66\67\3\2\2\2\67\13\3\2\2\28\66\3\2\2\29;\7\24")
-        buf.write("\2\2:<\7\20\2\2;:\3\2\2\2;<\3\2\2\2<=\3\2\2\2=?\5\30\r")
-        buf.write("\2>@\7\21\2\2?>\3\2\2\2?@\3\2\2\2@A\3\2\2\2AB\7\17\2\2")
-        buf.write("BC\7\r\2\2CR\5\n\6\2DF\7\25\2\2EG\7\20\2\2FE\3\2\2\2F")
-        buf.write("G\3\2\2\2GH\3\2\2\2HJ\5\30\r\2IK\7\21\2\2JI\3\2\2\2JK")
-        buf.write("\3\2\2\2KL\3\2\2\2LM\7\17\2\2MN\7\r\2\2NO\5\n\6\2OQ\3")
-        buf.write("\2\2\2PD\3\2\2\2QT\3\2\2\2RP\3\2\2\2RS\3\2\2\2SY\3\2\2")
-        buf.write("\2TR\3\2\2\2UV\7\26\2\2VW\7\17\2\2WX\7\r\2\2XZ\5\n\6\2")
-        buf.write("YU\3\2\2\2YZ\3\2\2\2Z\u00aa\3\2\2\2[]\7\24\2\2\\^\7\20")
-        buf.write("\2\2]\\\3\2\2\2]^\3\2\2\2^_\3\2\2\2_a\5\30\r\2`b\7\21")
-        buf.write("\2\2a`\3\2\2\2ab\3\2\2\2bc\3\2\2\2cd\7\17\2\2de\7\r\2")
-        buf.write("\2en\5\n\6\2fg\7\25\2\2gh\5\30\r\2hi\7\17\2\2ij\7\r\2")
-        buf.write("\2jk\5\n\6\2km\3\2\2\2lf\3\2\2\2mp\3\2\2\2nl\3\2\2\2n")
-        buf.write("o\3\2\2\2ou\3\2\2\2pn\3\2\2\2qr\7\26\2\2rs\7\17\2\2st")
-        buf.write("\7\r\2\2tv\5\n\6\2uq\3\2\2\2uv\3\2\2\2v\u00aa\3\2\2\2")
-        buf.write("wx\7\24\2\2xy\5\30\r\2yz\7\17\2\2z{\7\r\2\2{\u008a\5\n")
-        buf.write("\6\2|~\7\25\2\2}\177\7\20\2\2~}\3\2\2\2~\177\3\2\2\2\177")
-        buf.write("\u0080\3\2\2\2\u0080\u0082\5\30\r\2\u0081\u0083\7\21\2")
-        buf.write("\2\u0082\u0081\3\2\2\2\u0082\u0083\3\2\2\2\u0083\u0084")
-        buf.write("\3\2\2\2\u0084\u0085\7\17\2\2\u0085\u0086\7\r\2\2\u0086")
-        buf.write("\u0087\5\n\6\2\u0087\u0089\3\2\2\2\u0088|\3\2\2\2\u0089")
-        buf.write("\u008c\3\2\2\2\u008a\u0088\3\2\2\2\u008a\u008b\3\2\2\2")
-        buf.write("\u008b\u0091\3\2\2\2\u008c\u008a\3\2\2\2\u008d\u008e\7")
-        buf.write("\26\2\2\u008e\u008f\7\17\2\2\u008f\u0090\7\r\2\2\u0090")
-        buf.write("\u0092\5\n\6\2\u0091\u008d\3\2\2\2\u0091\u0092\3\2\2\2")
-        buf.write("\u0092\u00aa\3\2\2\2\u0093\u0094\7\24\2\2\u0094\u0095")
-        buf.write("\5\30\r\2\u0095\u0096\7\17\2\2\u0096\u0097\7\r\2\2\u0097")
-        buf.write("\u00a0\5\n\6\2\u0098\u0099\7\25\2\2\u0099\u009a\5\30\r")
-        buf.write("\2\u009a\u009b\7\17\2\2\u009b\u009c\7\r\2\2\u009c\u009d")
-        buf.write("\5\n\6\2\u009d\u009f\3\2\2\2\u009e\u0098\3\2\2\2\u009f")
-        buf.write("\u00a2\3\2\2\2\u00a0\u009e\3\2\2\2\u00a0\u00a1\3\2\2\2")
-        buf.write("\u00a1\u00a7\3\2\2\2\u00a2\u00a0\3\2\2\2\u00a3\u00a4\7")
-        buf.write("\26\2\2\u00a4\u00a5\7\17\2\2\u00a5\u00a6\7\r\2\2\u00a6")
-        buf.write("\u00a8\5\n\6\2\u00a7\u00a3\3\2\2\2\u00a7\u00a8\3\2\2\2")
-        buf.write("\u00a8\u00aa\3\2\2\2\u00a99\3\2\2\2\u00a9[\3\2\2\2\u00a9")
-        buf.write("w\3\2\2\2\u00a9\u0093\3\2\2\2\u00aa\r\3\2\2\2\u00ab\u00ac")
-        buf.write("\7\30\2\2\u00ac\u00ad\7\20\2\2\u00ad\u00ae\5\30\r\2\u00ae")
-        buf.write("\u00af\7\21\2\2\u00af\u00b0\7\17\2\2\u00b0\u00b1\7\r\2")
-        buf.write("\2\u00b1\u00b2\5\n\6\2\u00b2\u00ba\3\2\2\2\u00b3\u00b4")
-        buf.write("\7\30\2\2\u00b4\u00b5\5\30\r\2\u00b5\u00b6\7\17\2\2\u00b6")
-        buf.write("\u00b7\7\r\2\2\u00b7\u00b8\5\n\6\2\u00b8\u00ba\3\2\2\2")
-        buf.write("\u00b9\u00ab\3\2\2\2\u00b9\u00b3\3\2\2\2\u00ba\17\3\2")
-        buf.write("\2\2\u00bb\u00bc\7\31\2\2\u00bc\u00bd\7\20\2\2\u00bd\u00be")
-        buf.write("\5\30\r\2\u00be\u00bf\7\21\2\2\u00bf\u00c0\7\17\2\2\u00c0")
-        buf.write("\u00c1\7\r\2\2\u00c1\u00c2\5\n\6\2\u00c2\u00ca\3\2\2\2")
-        buf.write("\u00c3\u00c4\7\31\2\2\u00c4\u00c5\5\30\r\2\u00c5\u00c6")
-        buf.write("\7\17\2\2\u00c6\u00c7\7\r\2\2\u00c7\u00c8\5\n\6\2\u00c8")
-        buf.write("\u00ca\3\2\2\2\u00c9\u00bb\3\2\2\2\u00c9\u00c3\3\2\2\2")
-        buf.write("\u00ca\21\3\2\2\2\u00cb\u00cc\7\3\2\2\u00cc\u00cd\7\20")
-        buf.write("\2\2\u00cd\u00ce\5\26\f\2\u00ce\u00cf\7\21\2\2\u00cf\u00e8")
-        buf.write("\3\2\2\2\u00d0\u00d1\7\4\2\2\u00d1\u00d2\7\20\2\2\u00d2")
-        buf.write("\u00d3\5\26\f\2\u00d3\u00d4\7\21\2\2\u00d4\u00e8\3\2\2")
-        buf.write("\2\u00d5\u00d6\7\5\2\2\u00d6\u00dc\7\20\2\2\u00d7\u00d8")
-        buf.write("\5\26\f\2\u00d8\u00d9\7\6\2\2\u00d9\u00db\3\2\2\2\u00da")
-        buf.write("\u00d7\3\2\2\2\u00db\u00de\3\2\2\2\u00dc\u00da\3\2\2\2")
-        buf.write("\u00dc\u00dd\3\2\2\2\u00dd\u00df\3\2\2\2\u00de\u00dc\3")
-        buf.write("\2\2\2\u00df\u00e0\5\26\f\2\u00e0\u00e1\7\21\2\2\u00e1")
-        buf.write("\u00e8\3\2\2\2\u00e2\u00e3\7\7\2\2\u00e3\u00e4\7\20\2")
-        buf.write("\2\u00e4\u00e5\5\26\f\2\u00e5\u00e6\7\21\2\2\u00e6\u00e8")
-        buf.write("\3\2\2\2\u00e7\u00cb\3\2\2\2\u00e7\u00d0\3\2\2\2\u00e7")
-        buf.write("\u00d5\3\2\2\2\u00e7\u00e2\3\2\2\2\u00e8\23\3\2\2\2\u00e9")
-        buf.write("\u00ed\5\26\f\2\u00ea\u00ed\5\30\r\2\u00eb\u00ed\5\32")
-        buf.write("\16\2\u00ec\u00e9\3\2\2\2\u00ec\u00ea\3\2\2\2\u00ec\u00eb")
-        buf.write("\3\2\2\2\u00ed\25\3\2\2\2\u00ee\u00ef\b\f\1\2\u00ef\u00f0")
-        buf.write("\7\35\2\2\u00f0\u00f4\5\26\f\r\u00f1\u00f4\7\n\2\2\u00f2")
-        buf.write("\u00f4\7\13\2\2\u00f3\u00ee\3\2\2\2\u00f3\u00f1\3\2\2")
-        buf.write("\2\u00f3\u00f2\3\2\2\2\u00f4\u010f\3\2\2\2\u00f5\u00f6")
-        buf.write("\f\n\2\2\u00f6\u00f7\7!\2\2\u00f7\u010e\5\26\f\13\u00f8")
-        buf.write("\u00f9\f\t\2\2\u00f9\u00fa\t\2\2\2\u00fa\u010e\5\26\f")
-        buf.write("\n\u00fb\u00fc\f\b\2\2\u00fc\u00fd\t\3\2\2\u00fd\u010e")
-        buf.write("\5\26\f\t\u00fe\u00ff\f\7\2\2\u00ff\u0100\7 \2\2\u0100")
-        buf.write("\u010e\5\26\f\b\u0101\u0102\f\6\2\2\u0102\u0103\t\4\2")
-        buf.write("\2\u0103\u010e\5\26\f\7\u0104\u0105\f\5\2\2\u0105\u0106")
-        buf.write("\7/\2\2\u0106\u010e\5\26\f\6\u0107\u0108\f\4\2\2\u0108")
-        buf.write("\u0109\7\60\2\2\u0109\u010e\5\26\f\5\u010a\u010b\f\3\2")
-        buf.write("\2\u010b\u010c\7\61\2\2\u010c\u010e\5\26\f\4\u010d\u00f5")
-        buf.write("\3\2\2\2\u010d\u00f8\3\2\2\2\u010d\u00fb\3\2\2\2\u010d")
-        buf.write("\u00fe\3\2\2\2\u010d\u0101\3\2\2\2\u010d\u0104\3\2\2\2")
-        buf.write("\u010d\u0107\3\2\2\2\u010d\u010a\3\2\2\2\u010e\u0111\3")
-        buf.write("\2\2\2\u010f\u010d\3\2\2\2\u010f\u0110\3\2\2\2\u0110\27")
-        buf.write("\3\2\2\2\u0111\u010f\3\2\2\2\u0112\u0113\5\26\f\2\u0113")
-        buf.write("\u0114\t\5\2\2\u0114\u0115\5\26\f\2\u0115\31\3\2\2\2\u0116")
-        buf.write("\u011a\7\27\2\2\u0117\u0119\7\f\2\2\u0118\u0117\3\2\2")
-        buf.write("\2\u0119\u011c\3\2\2\2\u011a\u0118\3\2\2\2\u011a\u011b")
-        buf.write("\3\2\2\2\u011b\u011d\3\2\2\2\u011c\u011a\3\2\2\2\u011d")
-        buf.write("\u0121\t\6\2\2\u011e\u0120\7\f\2\2\u011f\u011e\3\2\2\2")
-        buf.write("\u0120\u0123\3\2\2\2\u0121\u011f\3\2\2\2\u0121\u0122\3")
-        buf.write("\2\2\2\u0122\u0124\3\2\2\2\u0123\u0121\3\2\2\2\u0124\u0125")
-        buf.write("\5\26\f\2\u0125\33\3\2\2\2!\37(.\66;?FJRY]anu~\u0082\u008a")
-        buf.write("\u0091\u00a0\u00a7\u00a9\u00b9\u00c9\u00dc\u00e7\u00ec")
-        buf.write("\u00f3\u010d\u010f\u011a\u0121")
+        buf.write("\5\7\u00aa\n\7\3\b\3\b\7\b\u00ae\n\b\f\b\16\b\u00b1\13")
+        buf.write("\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b")
+        buf.write("\5\b\u00c0\n\b\3\t\3\t\7\t\u00c4\n\t\f\t\16\t\u00c7\13")
+        buf.write("\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t")
+        buf.write("\5\t\u00d6\n\t\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n")
+        buf.write("\3\n\3\n\3\n\3\n\3\n\7\n\u00e7\n\n\f\n\16\n\u00ea\13\n")
+        buf.write("\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\5\n\u00f4\n\n\3\13\3")
+        buf.write("\13\3\13\5\13\u00f9\n\13\3\f\3\f\3\f\3\f\3\f\3\f\3\f\5")
+        buf.write("\f\u0102\n\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3")
+        buf.write("\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f")
+        buf.write("\7\f\u011c\n\f\f\f\16\f\u011f\13\f\3\r\3\r\7\r\u0123\n")
+        buf.write("\r\f\r\16\r\u0126\13\r\3\r\3\r\7\r\u012a\n\r\f\r\16\r")
+        buf.write("\u012d\13\r\3\r\3\r\7\r\u0131\n\r\f\r\16\r\u0134\13\r")
+        buf.write("\3\r\3\r\7\r\u0138\n\r\f\r\16\r\u013b\13\r\3\r\3\r\3\r")
+        buf.write("\3\r\3\r\3\r\7\r\u0143\n\r\f\r\16\r\u0146\13\r\3\16\3")
+        buf.write("\16\7\16\u014a\n\16\f\16\16\16\u014d\13\16\3\16\3\16\7")
+        buf.write("\16\u0151\n\16\f\16\16\16\u0154\13\16\3\16\3\16\3\16\2")
+        buf.write("\4\26\30\17\2\4\6\b\n\f\16\20\22\24\26\30\32\2\7\3\2\35")
+        buf.write("\36\3\2\33\34\3\2,-\3\2(,\3\2!\'\2\u0183\2\37\3\2\2\2")
+        buf.write("\4(\3\2\2\2\6.\3\2\2\2\b\60\3\2\2\2\n\66\3\2\2\2\f\u00a9")
+        buf.write("\3\2\2\2\16\u00bf\3\2\2\2\20\u00d5\3\2\2\2\22\u00f3\3")
+        buf.write("\2\2\2\24\u00f8\3\2\2\2\26\u0101\3\2\2\2\30\u0120\3\2")
+        buf.write("\2\2\32\u0147\3\2\2\2\34\36\5\4\3\2\35\34\3\2\2\2\36!")
+        buf.write("\3\2\2\2\37\35\3\2\2\2\37 \3\2\2\2 \"\3\2\2\2!\37\3\2")
+        buf.write("\2\2\"#\7\2\2\3#\3\3\2\2\2$)\5\6\4\2%)\5\f\7\2&)\5\16")
+        buf.write("\b\2\')\5\20\t\2($\3\2\2\2(%\3\2\2\2(&\3\2\2\2(\'\3\2")
+        buf.write("\2\2)\5\3\2\2\2*/\5\32\16\2+/\5\b\5\2,/\7\f\2\2-/\7\13")
+        buf.write("\2\2.*\3\2\2\2.+\3\2\2\2.,\3\2\2\2.-\3\2\2\2/\7\3\2\2")
+        buf.write("\2\60\61\7\61\2\2\61\t\3\2\2\2\62\63\7\r\2\2\63\65\5\6")
+        buf.write("\4\2\64\62\3\2\2\2\658\3\2\2\2\66\64\3\2\2\2\66\67\3\2")
+        buf.write("\2\2\67\13\3\2\2\28\66\3\2\2\29;\7\23\2\2:<\7\17\2\2;")
+        buf.write(":\3\2\2\2;<\3\2\2\2<=\3\2\2\2=?\5\30\r\2>@\7\20\2\2?>")
+        buf.write("\3\2\2\2?@\3\2\2\2@A\3\2\2\2AB\7\16\2\2BC\7\f\2\2CR\5")
+        buf.write("\n\6\2DF\7\24\2\2EG\7\17\2\2FE\3\2\2\2FG\3\2\2\2GH\3\2")
+        buf.write("\2\2HJ\5\30\r\2IK\7\20\2\2JI\3\2\2\2JK\3\2\2\2KL\3\2\2")
+        buf.write("\2LM\7\16\2\2MN\7\f\2\2NO\5\n\6\2OQ\3\2\2\2PD\3\2\2\2")
+        buf.write("QT\3\2\2\2RP\3\2\2\2RS\3\2\2\2SY\3\2\2\2TR\3\2\2\2UV\7")
+        buf.write("\25\2\2VW\7\16\2\2WX\7\f\2\2XZ\5\n\6\2YU\3\2\2\2YZ\3\2")
+        buf.write("\2\2Z\u00aa\3\2\2\2[]\7\23\2\2\\^\7\17\2\2]\\\3\2\2\2")
+        buf.write("]^\3\2\2\2^_\3\2\2\2_a\5\30\r\2`b\7\20\2\2a`\3\2\2\2a")
+        buf.write("b\3\2\2\2bc\3\2\2\2cd\7\16\2\2de\7\f\2\2en\5\n\6\2fg\7")
+        buf.write("\24\2\2gh\5\30\r\2hi\7\16\2\2ij\7\f\2\2jk\5\n\6\2km\3")
+        buf.write("\2\2\2lf\3\2\2\2mp\3\2\2\2nl\3\2\2\2no\3\2\2\2ou\3\2\2")
+        buf.write("\2pn\3\2\2\2qr\7\25\2\2rs\7\16\2\2st\7\f\2\2tv\5\n\6\2")
+        buf.write("uq\3\2\2\2uv\3\2\2\2v\u00aa\3\2\2\2wx\7\23\2\2xy\5\30")
+        buf.write("\r\2yz\7\16\2\2z{\7\f\2\2{\u008a\5\n\6\2|~\7\24\2\2}\177")
+        buf.write("\7\17\2\2~}\3\2\2\2~\177\3\2\2\2\177\u0080\3\2\2\2\u0080")
+        buf.write("\u0082\5\30\r\2\u0081\u0083\7\20\2\2\u0082\u0081\3\2\2")
+        buf.write("\2\u0082\u0083\3\2\2\2\u0083\u0084\3\2\2\2\u0084\u0085")
+        buf.write("\7\16\2\2\u0085\u0086\7\f\2\2\u0086\u0087\5\n\6\2\u0087")
+        buf.write("\u0089\3\2\2\2\u0088|\3\2\2\2\u0089\u008c\3\2\2\2\u008a")
+        buf.write("\u0088\3\2\2\2\u008a\u008b\3\2\2\2\u008b\u0091\3\2\2\2")
+        buf.write("\u008c\u008a\3\2\2\2\u008d\u008e\7\25\2\2\u008e\u008f")
+        buf.write("\7\16\2\2\u008f\u0090\7\f\2\2\u0090\u0092\5\n\6\2\u0091")
+        buf.write("\u008d\3\2\2\2\u0091\u0092\3\2\2\2\u0092\u00aa\3\2\2\2")
+        buf.write("\u0093\u0094\7\23\2\2\u0094\u0095\5\30\r\2\u0095\u0096")
+        buf.write("\7\16\2\2\u0096\u0097\7\f\2\2\u0097\u00a0\5\n\6\2\u0098")
+        buf.write("\u0099\7\24\2\2\u0099\u009a\5\30\r\2\u009a\u009b\7\16")
+        buf.write("\2\2\u009b\u009c\7\f\2\2\u009c\u009d\5\n\6\2\u009d\u009f")
+        buf.write("\3\2\2\2\u009e\u0098\3\2\2\2\u009f\u00a2\3\2\2\2\u00a0")
+        buf.write("\u009e\3\2\2\2\u00a0\u00a1\3\2\2\2\u00a1\u00a7\3\2\2\2")
+        buf.write("\u00a2\u00a0\3\2\2\2\u00a3\u00a4\7\25\2\2\u00a4\u00a5")
+        buf.write("\7\16\2\2\u00a5\u00a6\7\f\2\2\u00a6\u00a8\5\n\6\2\u00a7")
+        buf.write("\u00a3\3\2\2\2\u00a7\u00a8\3\2\2\2\u00a8\u00aa\3\2\2\2")
+        buf.write("\u00a99\3\2\2\2\u00a9[\3\2\2\2\u00a9w\3\2\2\2\u00a9\u0093")
+        buf.write("\3\2\2\2\u00aa\r\3\2\2\2\u00ab\u00af\7\26\2\2\u00ac\u00ae")
+        buf.write("\7\13\2\2\u00ad\u00ac\3\2\2\2\u00ae\u00b1\3\2\2\2\u00af")
+        buf.write("\u00ad\3\2\2\2\u00af\u00b0\3\2\2\2\u00b0\u00b2\3\2\2\2")
+        buf.write("\u00b1\u00af\3\2\2\2\u00b2\u00b3\7\17\2\2\u00b3\u00b4")
+        buf.write("\5\30\r\2\u00b4\u00b5\7\20\2\2\u00b5\u00b6\7\16\2\2\u00b6")
+        buf.write("\u00b7\7\f\2\2\u00b7\u00b8\5\n\6\2\u00b8\u00c0\3\2\2\2")
+        buf.write("\u00b9\u00ba\7\26\2\2\u00ba\u00bb\5\30\r\2\u00bb\u00bc")
+        buf.write("\7\16\2\2\u00bc\u00bd\7\f\2\2\u00bd\u00be\5\n\6\2\u00be")
+        buf.write("\u00c0\3\2\2\2\u00bf\u00ab\3\2\2\2\u00bf\u00b9\3\2\2\2")
+        buf.write("\u00c0\17\3\2\2\2\u00c1\u00c5\7\27\2\2\u00c2\u00c4\7\13")
+        buf.write("\2\2\u00c3\u00c2\3\2\2\2\u00c4\u00c7\3\2\2\2\u00c5\u00c3")
+        buf.write("\3\2\2\2\u00c5\u00c6\3\2\2\2\u00c6\u00c8\3\2\2\2\u00c7")
+        buf.write("\u00c5\3\2\2\2\u00c8\u00c9\7\17\2\2\u00c9\u00ca\5\30\r")
+        buf.write("\2\u00ca\u00cb\7\20\2\2\u00cb\u00cc\7\16\2\2\u00cc\u00cd")
+        buf.write("\7\f\2\2\u00cd\u00ce\5\n\6\2\u00ce\u00d6\3\2\2\2\u00cf")
+        buf.write("\u00d0\7\27\2\2\u00d0\u00d1\5\30\r\2\u00d1\u00d2\7\16")
+        buf.write("\2\2\u00d2\u00d3\7\f\2\2\u00d3\u00d4\5\n\6\2\u00d4\u00d6")
+        buf.write("\3\2\2\2\u00d5\u00c1\3\2\2\2\u00d5\u00cf\3\2\2\2\u00d6")
+        buf.write("\21\3\2\2\2\u00d7\u00d8\7\3\2\2\u00d8\u00d9\7\17\2\2\u00d9")
+        buf.write("\u00da\5\26\f\2\u00da\u00db\7\20\2\2\u00db\u00f4\3\2\2")
+        buf.write("\2\u00dc\u00dd\7\4\2\2\u00dd\u00de\7\17\2\2\u00de\u00df")
+        buf.write("\5\26\f\2\u00df\u00e0\7\20\2\2\u00e0\u00f4\3\2\2\2\u00e1")
+        buf.write("\u00e2\7\5\2\2\u00e2\u00e8\7\17\2\2\u00e3\u00e4\5\26\f")
+        buf.write("\2\u00e4\u00e5\7\6\2\2\u00e5\u00e7\3\2\2\2\u00e6\u00e3")
+        buf.write("\3\2\2\2\u00e7\u00ea\3\2\2\2\u00e8\u00e6\3\2\2\2\u00e8")
+        buf.write("\u00e9\3\2\2\2\u00e9\u00eb\3\2\2\2\u00ea\u00e8\3\2\2\2")
+        buf.write("\u00eb\u00ec\5\26\f\2\u00ec\u00ed\7\20\2\2\u00ed\u00f4")
+        buf.write("\3\2\2\2\u00ee\u00ef\7\7\2\2\u00ef\u00f0\7\17\2\2\u00f0")
+        buf.write("\u00f1\5\26\f\2\u00f1\u00f2\7\20\2\2\u00f2\u00f4\3\2\2")
+        buf.write("\2\u00f3\u00d7\3\2\2\2\u00f3\u00dc\3\2\2\2\u00f3\u00e1")
+        buf.write("\3\2\2\2\u00f3\u00ee\3\2\2\2\u00f4\23\3\2\2\2\u00f5\u00f9")
+        buf.write("\5\26\f\2\u00f6\u00f9\5\30\r\2\u00f7\u00f9\5\32\16\2\u00f8")
+        buf.write("\u00f5\3\2\2\2\u00f8\u00f6\3\2\2\2\u00f8\u00f7\3\2\2\2")
+        buf.write("\u00f9\25\3\2\2\2\u00fa\u00fb\b\f\1\2\u00fb\u00fc\7\34")
+        buf.write("\2\2\u00fc\u0102\5\26\f\17\u00fd\u0102\7\32\2\2\u00fe")
+        buf.write("\u0102\7\b\2\2\u00ff\u0102\7\t\2\2\u0100\u0102\7\n\2\2")
+        buf.write("\u0101\u00fa\3\2\2\2\u0101\u00fd\3\2\2\2\u0101\u00fe\3")
+        buf.write("\2\2\2\u0101\u00ff\3\2\2\2\u0101\u0100\3\2\2\2\u0102\u011d")
+        buf.write("\3\2\2\2\u0103\u0104\f\n\2\2\u0104\u0105\7 \2\2\u0105")
+        buf.write("\u011c\5\26\f\13\u0106\u0107\f\t\2\2\u0107\u0108\t\2\2")
+        buf.write("\2\u0108\u011c\5\26\f\n\u0109\u010a\f\b\2\2\u010a\u010b")
+        buf.write("\t\3\2\2\u010b\u011c\5\26\f\t\u010c\u010d\f\7\2\2\u010d")
+        buf.write("\u010e\7\37\2\2\u010e\u011c\5\26\f\b\u010f\u0110\f\6\2")
+        buf.write("\2\u0110\u0111\t\4\2\2\u0111\u011c\5\26\f\7\u0112\u0113")
+        buf.write("\f\5\2\2\u0113\u0114\7.\2\2\u0114\u011c\5\26\f\6\u0115")
+        buf.write("\u0116\f\4\2\2\u0116\u0117\7/\2\2\u0117\u011c\5\26\f\5")
+        buf.write("\u0118\u0119\f\3\2\2\u0119\u011a\7\60\2\2\u011a\u011c")
+        buf.write("\5\26\f\4\u011b\u0103\3\2\2\2\u011b\u0106\3\2\2\2\u011b")
+        buf.write("\u0109\3\2\2\2\u011b\u010c\3\2\2\2\u011b\u010f\3\2\2\2")
+        buf.write("\u011b\u0112\3\2\2\2\u011b\u0115\3\2\2\2\u011b\u0118\3")
+        buf.write("\2\2\2\u011c\u011f\3\2\2\2\u011d\u011b\3\2\2\2\u011d\u011e")
+        buf.write("\3\2\2\2\u011e\27\3\2\2\2\u011f\u011d\3\2\2\2\u0120\u0124")
+        buf.write("\b\r\1\2\u0121\u0123\7\13\2\2\u0122\u0121\3\2\2\2\u0123")
+        buf.write("\u0126\3\2\2\2\u0124\u0122\3\2\2\2\u0124\u0125\3\2\2\2")
+        buf.write("\u0125\u0127\3\2\2\2\u0126\u0124\3\2\2\2\u0127\u012b\5")
+        buf.write("\26\f\2\u0128\u012a\7\13\2\2\u0129\u0128\3\2\2\2\u012a")
+        buf.write("\u012d\3\2\2\2\u012b\u0129\3\2\2\2\u012b\u012c\3\2\2\2")
+        buf.write("\u012c\u012e\3\2\2\2\u012d\u012b\3\2\2\2\u012e\u0132\t")
+        buf.write("\5\2\2\u012f\u0131\7\13\2\2\u0130\u012f\3\2\2\2\u0131")
+        buf.write("\u0134\3\2\2\2\u0132\u0130\3\2\2\2\u0132\u0133\3\2\2\2")
+        buf.write("\u0133\u0135\3\2\2\2\u0134\u0132\3\2\2\2\u0135\u0139\5")
+        buf.write("\26\f\2\u0136\u0138\7\13\2\2\u0137\u0136\3\2\2\2\u0138")
+        buf.write("\u013b\3\2\2\2\u0139\u0137\3\2\2\2\u0139\u013a\3\2\2\2")
+        buf.write("\u013a\u0144\3\2\2\2\u013b\u0139\3\2\2\2\u013c\u013d\f")
+        buf.write("\4\2\2\u013d\u013e\7.\2\2\u013e\u0143\5\30\r\5\u013f\u0140")
+        buf.write("\f\3\2\2\u0140\u0141\7/\2\2\u0141\u0143\5\30\r\4\u0142")
+        buf.write("\u013c\3\2\2\2\u0142\u013f\3\2\2\2\u0143\u0146\3\2\2\2")
+        buf.write("\u0144\u0142\3\2\2\2\u0144\u0145\3\2\2\2\u0145\31\3\2")
+        buf.write("\2\2\u0146\u0144\3\2\2\2\u0147\u014b\7\32\2\2\u0148\u014a")
+        buf.write("\7\13\2\2\u0149\u0148\3\2\2\2\u014a\u014d\3\2\2\2\u014b")
+        buf.write("\u0149\3\2\2\2\u014b\u014c\3\2\2\2\u014c\u014e\3\2\2\2")
+        buf.write("\u014d\u014b\3\2\2\2\u014e\u0152\t\6\2\2\u014f\u0151\7")
+        buf.write("\13\2\2\u0150\u014f\3\2\2\2\u0151\u0154\3\2\2\2\u0152")
+        buf.write("\u0150\3\2\2\2\u0152\u0153\3\2\2\2\u0153\u0155\3\2\2\2")
+        buf.write("\u0154\u0152\3\2\2\2\u0155\u0156\5\26\f\2\u0156\33\3\2")
+        buf.write("\2\2)\37(.\66;?FJRY]anu~\u0082\u008a\u0091\u00a0\u00a7")
+        buf.write("\u00a9\u00af\u00bf\u00c5\u00d5\u00e8\u00f3\u00f8\u0101")
+        buf.write("\u011b\u011d\u0124\u012b\u0132\u0139\u0142\u0144\u014b")
+        buf.write("\u0152")
         return buf.getvalue()
 
 
@@ -156,23 +185,22 @@ class supercritParser ( Parser ):
 
     literalNames = [ "<INVALID>", "'str'", "'int'", "'range'", "','", "'print'", 
                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "<INVALID>", "<INVALID>", "<INVALID>", "':'", "'('", 
-                     "')'", "'['", "']'", "'if'", "'elif'", "'else'", "<INVALID>", 
-                     "'while'", "'for'", "'break'", "'continue'", "'+'", 
-                     "'-'", "'*'", "'/'", "'%'", "'**'", "'='", "'+='", 
-                     "'-='", "'*='", "'/='", "'**='", "'%='", "'<'", "'<='", 
-                     "'>'", "'>='", "'=='", "'!='", "'and'", "'or'", "'not'" ]
+                     "<INVALID>", "<INVALID>", "':'", "'('", "')'", "'['", 
+                     "']'", "'if'", "'elif'", "'else'", "'while'", "'for'", 
+                     "'break'", "'continue'", "<INVALID>", "'+'", "'-'", 
+                     "'*'", "'/'", "'%'", "'**'", "'='", "'+='", "'-='", 
+                     "'*='", "'/='", "'**='", "'%='", "'<'", "'<='", "'>'", 
+                     "'>='", "'=='", "'!='", "'and'", "'or'", "'not'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "INT", "FLOAT", "NUMBER", 
-                      "STRING", "WHITESPACE", "NEWLINE", "TAB", "COLON", 
-                      "OPEN_PAR", "CLOSE_PAR", "OPEN_BRAC", "CLOSE_BRAC", 
-                      "IF", "ELIF", "ELSE", "VAR", "WHILE", "FOR", "BREAK", 
-                      "CONTINUE", "PLUS", "MINUS", "TIMES", "DIV", "MOD", 
-                      "POW", "ASSIGN", "INCREMENT", "DECREMENT", "MULT_EQ", 
-                      "DIV_EQ", "POW_EQ", "MOD_EQ", "LESS", "LESS_EQ", "GREATER", 
-                      "GREATER_EQ", "EQUAL", "NOT_EQUAL", "AND", "OR", "NOT", 
-                      "COMMENT" ]
+                      "<INVALID>", "<INVALID>", "INT", "FLOAT", "STRING", 
+                      "WHITESPACE", "NEWLINE", "TAB", "COLON", "OPEN_PAR", 
+                      "CLOSE_PAR", "OPEN_BRAC", "CLOSE_BRAC", "IF", "ELIF", 
+                      "ELSE", "WHILE", "FOR", "BREAK", "CONTINUE", "VAR", 
+                      "PLUS", "MINUS", "TIMES", "DIV", "MOD", "POW", "ASSIGN", 
+                      "INCREMENT", "DECREMENT", "MULT_EQ", "DIV_EQ", "POW_EQ", 
+                      "MOD_EQ", "LESS", "LESS_EQ", "GREATER", "GREATER_EQ", 
+                      "EQUAL", "NOT_EQUAL", "AND", "OR", "NOT", "COMMENT" ]
 
     RULE_start = 0
     RULE_block = 1
@@ -200,47 +228,46 @@ class supercritParser ( Parser ):
     T__4=5
     INT=6
     FLOAT=7
-    NUMBER=8
-    STRING=9
-    WHITESPACE=10
-    NEWLINE=11
-    TAB=12
-    COLON=13
-    OPEN_PAR=14
-    CLOSE_PAR=15
-    OPEN_BRAC=16
-    CLOSE_BRAC=17
-    IF=18
-    ELIF=19
-    ELSE=20
-    VAR=21
-    WHILE=22
-    FOR=23
-    BREAK=24
-    CONTINUE=25
-    PLUS=26
-    MINUS=27
-    TIMES=28
-    DIV=29
-    MOD=30
-    POW=31
-    ASSIGN=32
-    INCREMENT=33
-    DECREMENT=34
-    MULT_EQ=35
-    DIV_EQ=36
-    POW_EQ=37
-    MOD_EQ=38
-    LESS=39
-    LESS_EQ=40
-    GREATER=41
-    GREATER_EQ=42
-    EQUAL=43
-    NOT_EQUAL=44
-    AND=45
-    OR=46
-    NOT=47
-    COMMENT=48
+    STRING=8
+    WHITESPACE=9
+    NEWLINE=10
+    TAB=11
+    COLON=12
+    OPEN_PAR=13
+    CLOSE_PAR=14
+    OPEN_BRAC=15
+    CLOSE_BRAC=16
+    IF=17
+    ELIF=18
+    ELSE=19
+    WHILE=20
+    FOR=21
+    BREAK=22
+    CONTINUE=23
+    VAR=24
+    PLUS=25
+    MINUS=26
+    TIMES=27
+    DIV=28
+    MOD=29
+    POW=30
+    ASSIGN=31
+    INCREMENT=32
+    DECREMENT=33
+    MULT_EQ=34
+    DIV_EQ=35
+    POW_EQ=36
+    MOD_EQ=37
+    LESS=38
+    LESS_EQ=39
+    GREATER=40
+    GREATER_EQ=41
+    EQUAL=42
+    NOT_EQUAL=43
+    AND=44
+    OR=45
+    NOT=46
+    COMMENT=47
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -292,7 +319,7 @@ class supercritParser ( Parser ):
             self.state = 29
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << supercritParser.WHITESPACE) | (1 << supercritParser.NEWLINE) | (1 << supercritParser.IF) | (1 << supercritParser.VAR) | (1 << supercritParser.WHILE) | (1 << supercritParser.FOR) | (1 << supercritParser.COMMENT))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << supercritParser.WHITESPACE) | (1 << supercritParser.NEWLINE) | (1 << supercritParser.IF) | (1 << supercritParser.WHILE) | (1 << supercritParser.FOR) | (1 << supercritParser.VAR) | (1 << supercritParser.COMMENT))) != 0):
                 self.state = 26
                 self.block()
                 self.state = 31
@@ -658,7 +685,7 @@ class supercritParser ( Parser ):
 
 
                 self.state = 59
-                self.conditional()
+                self.conditional(0)
                 self.state = 61
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
@@ -688,7 +715,7 @@ class supercritParser ( Parser ):
 
 
                     self.state = 70
-                    self.conditional()
+                    self.conditional(0)
                     self.state = 72
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
@@ -736,7 +763,7 @@ class supercritParser ( Parser ):
 
 
                 self.state = 93
-                self.conditional()
+                self.conditional(0)
                 self.state = 95
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
@@ -758,7 +785,7 @@ class supercritParser ( Parser ):
                     self.state = 100
                     self.match(supercritParser.ELIF)
                     self.state = 101
-                    self.conditional()
+                    self.conditional(0)
                     self.state = 102
                     self.match(supercritParser.COLON)
                     self.state = 103
@@ -790,7 +817,7 @@ class supercritParser ( Parser ):
                 self.state = 117
                 self.match(supercritParser.IF)
                 self.state = 118
-                self.conditional()
+                self.conditional(0)
                 self.state = 119
                 self.match(supercritParser.COLON)
                 self.state = 120
@@ -812,7 +839,7 @@ class supercritParser ( Parser ):
 
 
                     self.state = 126
-                    self.conditional()
+                    self.conditional(0)
                     self.state = 128
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
@@ -852,7 +879,7 @@ class supercritParser ( Parser ):
                 self.state = 145
                 self.match(supercritParser.IF)
                 self.state = 146
-                self.conditional()
+                self.conditional(0)
                 self.state = 147
                 self.match(supercritParser.COLON)
                 self.state = 148
@@ -866,7 +893,7 @@ class supercritParser ( Parser ):
                     self.state = 150
                     self.match(supercritParser.ELIF)
                     self.state = 151
-                    self.conditional()
+                    self.conditional(0)
                     self.state = 152
                     self.match(supercritParser.COLON)
                     self.state = 153
@@ -933,6 +960,12 @@ class supercritParser ( Parser ):
             return self.getTypedRuleContext(supercritParser.Tab_blockContext,0)
 
 
+        def WHITESPACE(self, i:int=None):
+            if i is None:
+                return self.getTokens(supercritParser.WHITESPACE)
+            else:
+                return self.getToken(supercritParser.WHITESPACE, i)
+
         def getRuleIndex(self):
             return supercritParser.RULE_while_block
 
@@ -951,39 +984,50 @@ class supercritParser ( Parser ):
 
         localctx = supercritParser.While_blockContext(self, self._ctx, self.state)
         self.enterRule(localctx, 12, self.RULE_while_block)
+        self._la = 0 # Token type
         try:
-            self.state = 183
+            self.state = 189
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,21,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,22,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 169
                 self.match(supercritParser.WHILE)
-                self.state = 170
-                self.match(supercritParser.OPEN_PAR)
-                self.state = 171
-                self.conditional()
-                self.state = 172
-                self.match(supercritParser.CLOSE_PAR)
                 self.state = 173
-                self.match(supercritParser.COLON)
-                self.state = 174
-                self.match(supercritParser.NEWLINE)
-                self.state = 175
-                self.tab_block()
-                pass
+                self._errHandler.sync(self)
+                _la = self._input.LA(1)
+                while _la==supercritParser.WHITESPACE:
+                    self.state = 170
+                    self.match(supercritParser.WHITESPACE)
+                    self.state = 175
+                    self._errHandler.sync(self)
+                    _la = self._input.LA(1)
 
-            elif la_ == 2:
-                self.enterOuterAlt(localctx, 2)
+                self.state = 176
+                self.match(supercritParser.OPEN_PAR)
                 self.state = 177
-                self.match(supercritParser.WHILE)
+                self.conditional(0)
                 self.state = 178
-                self.conditional()
+                self.match(supercritParser.CLOSE_PAR)
                 self.state = 179
                 self.match(supercritParser.COLON)
                 self.state = 180
                 self.match(supercritParser.NEWLINE)
                 self.state = 181
+                self.tab_block()
+                pass
+
+            elif la_ == 2:
+                self.enterOuterAlt(localctx, 2)
+                self.state = 183
+                self.match(supercritParser.WHILE)
+                self.state = 184
+                self.conditional(0)
+                self.state = 185
+                self.match(supercritParser.COLON)
+                self.state = 186
+                self.match(supercritParser.NEWLINE)
+                self.state = 187
                 self.tab_block()
                 pass
 
@@ -1027,6 +1071,12 @@ class supercritParser ( Parser ):
             return self.getTypedRuleContext(supercritParser.Tab_blockContext,0)
 
 
+        def WHITESPACE(self, i:int=None):
+            if i is None:
+                return self.getTokens(supercritParser.WHITESPACE)
+            else:
+                return self.getToken(supercritParser.WHITESPACE, i)
+
         def getRuleIndex(self):
             return supercritParser.RULE_for_block
 
@@ -1045,39 +1095,50 @@ class supercritParser ( Parser ):
 
         localctx = supercritParser.For_blockContext(self, self._ctx, self.state)
         self.enterRule(localctx, 14, self.RULE_for_block)
+        self._la = 0 # Token type
         try:
-            self.state = 199
+            self.state = 211
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,22,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,24,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 185
-                self.match(supercritParser.FOR)
-                self.state = 186
-                self.match(supercritParser.OPEN_PAR)
-                self.state = 187
-                self.conditional()
-                self.state = 188
-                self.match(supercritParser.CLOSE_PAR)
-                self.state = 189
-                self.match(supercritParser.COLON)
-                self.state = 190
-                self.match(supercritParser.NEWLINE)
                 self.state = 191
+                self.match(supercritParser.FOR)
+                self.state = 195
+                self._errHandler.sync(self)
+                _la = self._input.LA(1)
+                while _la==supercritParser.WHITESPACE:
+                    self.state = 192
+                    self.match(supercritParser.WHITESPACE)
+                    self.state = 197
+                    self._errHandler.sync(self)
+                    _la = self._input.LA(1)
+
+                self.state = 198
+                self.match(supercritParser.OPEN_PAR)
+                self.state = 199
+                self.conditional(0)
+                self.state = 200
+                self.match(supercritParser.CLOSE_PAR)
+                self.state = 201
+                self.match(supercritParser.COLON)
+                self.state = 202
+                self.match(supercritParser.NEWLINE)
+                self.state = 203
                 self.tab_block()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 193
+                self.state = 205
                 self.match(supercritParser.FOR)
-                self.state = 194
-                self.conditional()
-                self.state = 195
+                self.state = 206
+                self.conditional(0)
+                self.state = 207
                 self.match(supercritParser.COLON)
-                self.state = 196
+                self.state = 208
                 self.match(supercritParser.NEWLINE)
-                self.state = 197
+                self.state = 209
                 self.tab_block()
                 pass
 
@@ -1130,64 +1191,64 @@ class supercritParser ( Parser ):
         localctx = supercritParser.FunctionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 16, self.RULE_function)
         try:
-            self.state = 229
+            self.state = 241
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [supercritParser.T__0]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 201
+                self.state = 213
                 self.match(supercritParser.T__0)
-                self.state = 202
+                self.state = 214
                 self.match(supercritParser.OPEN_PAR)
-                self.state = 203
+                self.state = 215
                 self.expr(0)
-                self.state = 204
+                self.state = 216
                 self.match(supercritParser.CLOSE_PAR)
                 pass
             elif token in [supercritParser.T__1]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 206
+                self.state = 218
                 self.match(supercritParser.T__1)
-                self.state = 207
+                self.state = 219
                 self.match(supercritParser.OPEN_PAR)
-                self.state = 208
+                self.state = 220
                 self.expr(0)
-                self.state = 209
+                self.state = 221
                 self.match(supercritParser.CLOSE_PAR)
                 pass
             elif token in [supercritParser.T__2]:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 211
+                self.state = 223
                 self.match(supercritParser.T__2)
-                self.state = 212
+                self.state = 224
                 self.match(supercritParser.OPEN_PAR)
-                self.state = 218
+                self.state = 230
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,23,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,25,self._ctx)
                 while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                     if _alt==1:
-                        self.state = 213
+                        self.state = 225
                         self.expr(0)
-                        self.state = 214
+                        self.state = 226
                         self.match(supercritParser.T__3) 
-                    self.state = 220
+                    self.state = 232
                     self._errHandler.sync(self)
-                    _alt = self._interp.adaptivePredict(self._input,23,self._ctx)
+                    _alt = self._interp.adaptivePredict(self._input,25,self._ctx)
 
-                self.state = 221
+                self.state = 233
                 self.expr(0)
-                self.state = 222
+                self.state = 234
                 self.match(supercritParser.CLOSE_PAR)
                 pass
             elif token in [supercritParser.T__4]:
                 self.enterOuterAlt(localctx, 4)
-                self.state = 224
+                self.state = 236
                 self.match(supercritParser.T__4)
-                self.state = 225
+                self.state = 237
                 self.match(supercritParser.OPEN_PAR)
-                self.state = 226
+                self.state = 238
                 self.expr(0)
-                self.state = 227
+                self.state = 239
                 self.match(supercritParser.CLOSE_PAR)
                 pass
             else:
@@ -1240,24 +1301,24 @@ class supercritParser ( Parser ):
         localctx = supercritParser.StatementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 18, self.RULE_statement)
         try:
-            self.state = 234
+            self.state = 246
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,25,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,27,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 231
+                self.state = 243
                 self.expr(0)
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 232
-                self.conditional()
+                self.state = 244
+                self.conditional(0)
                 pass
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 233
+                self.state = 245
                 self.assignment()
                 pass
 
@@ -1288,8 +1349,14 @@ class supercritParser ( Parser ):
                 return self.getTypedRuleContext(supercritParser.ExprContext,i)
 
 
-        def NUMBER(self):
-            return self.getToken(supercritParser.NUMBER, 0)
+        def VAR(self):
+            return self.getToken(supercritParser.VAR, 0)
+
+        def INT(self):
+            return self.getToken(supercritParser.INT, 0)
+
+        def FLOAT(self):
+            return self.getToken(supercritParser.FLOAT, 0)
 
         def STRING(self):
             return self.getToken(supercritParser.STRING, 0)
@@ -1347,161 +1414,169 @@ class supercritParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 241
+            self.state = 255
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [supercritParser.MINUS]:
-                self.state = 237
+                self.state = 249
                 self.match(supercritParser.MINUS)
-                self.state = 238
-                self.expr(11)
+                self.state = 250
+                self.expr(13)
                 pass
-            elif token in [supercritParser.NUMBER]:
-                self.state = 239
-                self.match(supercritParser.NUMBER)
+            elif token in [supercritParser.VAR]:
+                self.state = 251
+                self.match(supercritParser.VAR)
+                pass
+            elif token in [supercritParser.INT]:
+                self.state = 252
+                self.match(supercritParser.INT)
+                pass
+            elif token in [supercritParser.FLOAT]:
+                self.state = 253
+                self.match(supercritParser.FLOAT)
                 pass
             elif token in [supercritParser.STRING]:
-                self.state = 240
+                self.state = 254
                 self.match(supercritParser.STRING)
                 pass
             else:
                 raise NoViableAltException(self)
 
             self._ctx.stop = self._input.LT(-1)
-            self.state = 269
+            self.state = 283
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,28,self._ctx)
+            _alt = self._interp.adaptivePredict(self._input,30,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
-                    self.state = 267
+                    self.state = 281
                     self._errHandler.sync(self)
-                    la_ = self._interp.adaptivePredict(self._input,27,self._ctx)
+                    la_ = self._interp.adaptivePredict(self._input,29,self._ctx)
                     if la_ == 1:
                         localctx = supercritParser.ExprContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
-                        self.state = 243
+                        self.state = 257
                         if not self.precpred(self._ctx, 8):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 8)")
-                        self.state = 244
+                        self.state = 258
                         self.match(supercritParser.POW)
-                        self.state = 245
+                        self.state = 259
                         self.expr(9)
                         pass
 
                     elif la_ == 2:
                         localctx = supercritParser.ExprContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
-                        self.state = 246
+                        self.state = 260
                         if not self.precpred(self._ctx, 7):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 7)")
-                        self.state = 247
+                        self.state = 261
                         _la = self._input.LA(1)
                         if not(_la==supercritParser.TIMES or _la==supercritParser.DIV):
                             self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
                             self.consume()
-                        self.state = 248
+                        self.state = 262
                         self.expr(8)
                         pass
 
                     elif la_ == 3:
                         localctx = supercritParser.ExprContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
-                        self.state = 249
+                        self.state = 263
                         if not self.precpred(self._ctx, 6):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 6)")
-                        self.state = 250
+                        self.state = 264
                         _la = self._input.LA(1)
                         if not(_la==supercritParser.PLUS or _la==supercritParser.MINUS):
                             self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
                             self.consume()
-                        self.state = 251
+                        self.state = 265
                         self.expr(7)
                         pass
 
                     elif la_ == 4:
                         localctx = supercritParser.ExprContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
-                        self.state = 252
+                        self.state = 266
                         if not self.precpred(self._ctx, 5):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 5)")
-                        self.state = 253
+                        self.state = 267
                         self.match(supercritParser.MOD)
-                        self.state = 254
+                        self.state = 268
                         self.expr(6)
                         pass
 
                     elif la_ == 5:
                         localctx = supercritParser.ExprContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
-                        self.state = 255
+                        self.state = 269
                         if not self.precpred(self._ctx, 4):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 4)")
-                        self.state = 256
+                        self.state = 270
                         _la = self._input.LA(1)
                         if not(_la==supercritParser.EQUAL or _la==supercritParser.NOT_EQUAL):
                             self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
                             self.consume()
-                        self.state = 257
+                        self.state = 271
                         self.expr(5)
                         pass
 
                     elif la_ == 6:
                         localctx = supercritParser.ExprContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
-                        self.state = 258
+                        self.state = 272
                         if not self.precpred(self._ctx, 3):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 3)")
-                        self.state = 259
+                        self.state = 273
                         self.match(supercritParser.AND)
-                        self.state = 260
+                        self.state = 274
                         self.expr(4)
                         pass
 
                     elif la_ == 7:
                         localctx = supercritParser.ExprContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
-                        self.state = 261
+                        self.state = 275
                         if not self.precpred(self._ctx, 2):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 2)")
-                        self.state = 262
+                        self.state = 276
                         self.match(supercritParser.OR)
-                        self.state = 263
+                        self.state = 277
                         self.expr(3)
                         pass
 
                     elif la_ == 8:
                         localctx = supercritParser.ExprContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
-                        self.state = 264
+                        self.state = 278
                         if not self.precpred(self._ctx, 1):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
-                        self.state = 265
+                        self.state = 279
                         self.match(supercritParser.NOT)
-                        self.state = 266
+                        self.state = 280
                         self.expr(2)
                         pass
 
              
-                self.state = 271
+                self.state = 285
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,28,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,30,self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -1538,6 +1613,28 @@ class supercritParser ( Parser ):
         def GREATER_EQ(self):
             return self.getToken(supercritParser.GREATER_EQ, 0)
 
+        def EQUAL(self):
+            return self.getToken(supercritParser.EQUAL, 0)
+
+        def WHITESPACE(self, i:int=None):
+            if i is None:
+                return self.getTokens(supercritParser.WHITESPACE)
+            else:
+                return self.getToken(supercritParser.WHITESPACE, i)
+
+        def conditional(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(supercritParser.ConditionalContext)
+            else:
+                return self.getTypedRuleContext(supercritParser.ConditionalContext,i)
+
+
+        def AND(self):
+            return self.getToken(supercritParser.AND, 0)
+
+        def OR(self):
+            return self.getToken(supercritParser.OR, 0)
+
         def getRuleIndex(self):
             return supercritParser.RULE_conditional
 
@@ -1551,31 +1648,117 @@ class supercritParser ( Parser ):
 
 
 
-
-    def conditional(self):
-
-        localctx = supercritParser.ConditionalContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 22, self.RULE_conditional)
+    def conditional(self, _p:int=0):
+        _parentctx = self._ctx
+        _parentState = self.state
+        localctx = supercritParser.ConditionalContext(self, self._ctx, _parentState)
+        _prevctx = localctx
+        _startState = 22
+        self.enterRecursionRule(localctx, 22, self.RULE_conditional, _p)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 272
-            self.expr(0)
-            self.state = 273
+            self.state = 290
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << supercritParser.LESS) | (1 << supercritParser.LESS_EQ) | (1 << supercritParser.GREATER) | (1 << supercritParser.GREATER_EQ))) != 0)):
+            while _la==supercritParser.WHITESPACE:
+                self.state = 287
+                self.match(supercritParser.WHITESPACE)
+                self.state = 292
+                self._errHandler.sync(self)
+                _la = self._input.LA(1)
+
+            self.state = 293
+            self.expr(0)
+            self.state = 297
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            while _la==supercritParser.WHITESPACE:
+                self.state = 294
+                self.match(supercritParser.WHITESPACE)
+                self.state = 299
+                self._errHandler.sync(self)
+                _la = self._input.LA(1)
+
+            self.state = 300
+            _la = self._input.LA(1)
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << supercritParser.LESS) | (1 << supercritParser.LESS_EQ) | (1 << supercritParser.GREATER) | (1 << supercritParser.GREATER_EQ) | (1 << supercritParser.EQUAL))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
                 self.consume()
-            self.state = 274
+            self.state = 304
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            while _la==supercritParser.WHITESPACE:
+                self.state = 301
+                self.match(supercritParser.WHITESPACE)
+                self.state = 306
+                self._errHandler.sync(self)
+                _la = self._input.LA(1)
+
+            self.state = 307
             self.expr(0)
+            self.state = 311
+            self._errHandler.sync(self)
+            _alt = self._interp.adaptivePredict(self._input,34,self._ctx)
+            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
+                if _alt==1:
+                    self.state = 308
+                    self.match(supercritParser.WHITESPACE) 
+                self.state = 313
+                self._errHandler.sync(self)
+                _alt = self._interp.adaptivePredict(self._input,34,self._ctx)
+
+            self._ctx.stop = self._input.LT(-1)
+            self.state = 322
+            self._errHandler.sync(self)
+            _alt = self._interp.adaptivePredict(self._input,36,self._ctx)
+            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
+                if _alt==1:
+                    if self._parseListeners is not None:
+                        self.triggerExitRuleEvent()
+                    _prevctx = localctx
+                    self.state = 320
+                    self._errHandler.sync(self)
+                    la_ = self._interp.adaptivePredict(self._input,35,self._ctx)
+                    if la_ == 1:
+                        localctx = supercritParser.ConditionalContext(self, _parentctx, _parentState)
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_conditional)
+                        self.state = 314
+                        if not self.precpred(self._ctx, 2):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 2)")
+                        self.state = 315
+                        self.match(supercritParser.AND)
+                        self.state = 316
+                        self.conditional(3)
+                        pass
+
+                    elif la_ == 2:
+                        localctx = supercritParser.ConditionalContext(self, _parentctx, _parentState)
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_conditional)
+                        self.state = 317
+                        if not self.precpred(self._ctx, 1):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
+                        self.state = 318
+                        self.match(supercritParser.OR)
+                        self.state = 319
+                        self.conditional(2)
+                        pass
+
+             
+                self.state = 324
+                self._errHandler.sync(self)
+                _alt = self._interp.adaptivePredict(self._input,36,self._ctx)
+
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
             self._errHandler.recover(self, re)
         finally:
-            self.exitRule()
+            self.unrollRecursionContexts(_parentctx)
         return localctx
 
 
@@ -1641,36 +1824,36 @@ class supercritParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 276
+            self.state = 325
             self.match(supercritParser.VAR)
-            self.state = 280
+            self.state = 329
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==supercritParser.WHITESPACE:
-                self.state = 277
+                self.state = 326
                 self.match(supercritParser.WHITESPACE)
-                self.state = 282
+                self.state = 331
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
-            self.state = 283
+            self.state = 332
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << supercritParser.ASSIGN) | (1 << supercritParser.INCREMENT) | (1 << supercritParser.DECREMENT) | (1 << supercritParser.MULT_EQ) | (1 << supercritParser.DIV_EQ) | (1 << supercritParser.POW_EQ) | (1 << supercritParser.MOD_EQ))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
                 self.consume()
-            self.state = 287
+            self.state = 336
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==supercritParser.WHITESPACE:
-                self.state = 284
+                self.state = 333
                 self.match(supercritParser.WHITESPACE)
-                self.state = 289
+                self.state = 338
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
-            self.state = 290
+            self.state = 339
             self.expr(0)
         except RecognitionException as re:
             localctx.exception = re
@@ -1686,6 +1869,7 @@ class supercritParser ( Parser ):
         if self._predicates == None:
             self._predicates = dict()
         self._predicates[10] = self.expr_sempred
+        self._predicates[11] = self.conditional_sempred
         pred = self._predicates.get(ruleIndex, None)
         if pred is None:
             raise Exception("No predicate with index:" + str(ruleIndex))
@@ -1722,6 +1906,15 @@ class supercritParser ( Parser ):
          
 
             if predIndex == 7:
+                return self.precpred(self._ctx, 1)
+         
+
+    def conditional_sempred(self, localctx:ConditionalContext, predIndex:int):
+            if predIndex == 8:
+                return self.precpred(self._ctx, 2)
+         
+
+            if predIndex == 9:
                 return self.precpred(self._ctx, 1)
          
 

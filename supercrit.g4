@@ -53,12 +53,12 @@ if_block
 
 // while and for Loops  
 while_block
-    : WHILE OPEN_PAR conditional CLOSE_PAR COLON NEWLINE tab_block
+    : WHILE WHITESPACE* OPEN_PAR conditional CLOSE_PAR COLON NEWLINE tab_block
     | WHILE conditional COLON NEWLINE tab_block
     ;
 
 for_block
-    : FOR OPEN_PAR conditional CLOSE_PAR COLON NEWLINE tab_block
+    : FOR WHITESPACE* OPEN_PAR conditional CLOSE_PAR COLON NEWLINE tab_block
     | FOR conditional COLON NEWLINE tab_block
     ;
 
@@ -85,7 +85,9 @@ statement
 
 expr
     : '-' expr
-    | NUMBER
+    | VAR
+    | INT
+    | FLOAT
     | STRING
     | expr POW expr
     | expr (TIMES | DIV) expr
@@ -99,7 +101,9 @@ expr
 
 // Conditional statements(<, <=, >, >=, ==, !=, and, or, not)
 conditional
-    :expr (LESS | LESS_EQ | GREATER | GREATER_EQ) expr
+    : WHITESPACE* expr WHITESPACE* (LESS | LESS_EQ | GREATER | GREATER_EQ | EQUAL) WHITESPACE* expr WHITESPACE*
+    | conditional AND conditional
+    | conditional OR conditional
     ;
 
 // Assignment operators (=, +=, -=, *=, /=, ^=, %=)
@@ -139,7 +143,6 @@ FLOAT:                         // Either have  """.""" or """. numbers for float
     INT? DECIMAL 
     | INT '.'
     ;
-NUMBER: INT | FLOAT;
 
 STRING: '"'(.)*?'"';
 // Defining whitespace and newlines
@@ -161,15 +164,16 @@ CLOSE_BRAC: ']';
 IF: 'if';
 ELIF: 'elif';
 ELSE: 'else';
-// Variable definitions- Rules for Python variables: must start with a letter or underscore character. cannot start with a number fragment
-// case sensitive, only alpha-numeric A-z, 0-9
-VAR: [a-zA-Z_] [a-zA-Z_0-9]*;
 
 // while and for Loops  
 WHILE: 'while';
 FOR: 'for';
 BREAK: 'break';
 CONTINUE: 'continue';
+
+// Variable definitions- Rules for Python variables: must start with a letter or underscore character. cannot start with a number fragment
+// case sensitive, only alpha-numeric A-z, 0-9
+VAR: [a-zA-Z_] [a-zA-Z_0-9]*;
 // Arithmetic operators (+, -, *, /, %, ^)  
 
 PLUS: '+';
