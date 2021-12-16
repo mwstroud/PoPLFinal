@@ -13,21 +13,28 @@ grammar supercrit;
 
 // Defines the relations between the tokens 
 // Base of the entire parser is the start which is composed of a block and then the end-of-file
-start: block EOF ;
+start: block* EOF ;
 
 
 // A block will be the most general Python3 code which will be any number of statements strung together
 block
-    : line*
-    | if_block*
-    | while_block*
-    | for_block*
+    : line
+    | if_block
+    | while_block
+    | for_block
     ;
 
 // A statement will be composed of the project requirements: if, while, for, and line which are expressions with a newline, etc.
 line
-    : assignment NEWLINE
+    : assignment   
+    | comment 
+    | NEWLINE
+    | WHITESPACE 
     ;
+
+// Support for comments 
+comment: COMMENT;
+
 // if/else blocks
 // I want to define a tab block that will be used for if,while, and for loops. It is a tab followed by a line any number of times.
 
@@ -36,6 +43,9 @@ tab_block
 
 if_block
     : IF OPEN_PAR? conditional CLOSE_PAR? COLON NEWLINE tab_block (ELIF OPEN_PAR? conditional CLOSE_PAR? COLON NEWLINE tab_block)* (ELSE COLON NEWLINE tab_block)?
+    | IF OPEN_PAR? conditional CLOSE_PAR? COLON NEWLINE tab_block (ELIF conditional COLON NEWLINE tab_block)* (ELSE COLON NEWLINE tab_block)?
+    | IF conditional COLON NEWLINE tab_block (ELIF OPEN_PAR? conditional CLOSE_PAR? COLON NEWLINE tab_block)* (ELSE COLON NEWLINE tab_block)?
+    | IF conditional COLON NEWLINE tab_block (ELIF conditional COLON NEWLINE tab_block)* (ELSE COLON NEWLINE tab_block)?
     ;
 
 // Variable definitions
@@ -43,11 +53,13 @@ if_block
 
 // while and for Loops  
 while_block
-    : WHILE OPEN_PAR? conditional CLOSE_PAR? COLON NEWLINE tab_block
+    : WHILE OPEN_PAR conditional CLOSE_PAR COLON NEWLINE tab_block
+    | WHILE conditional COLON NEWLINE tab_block
     ;
 
 for_block
-    : FOR OPEN_PAR? conditional CLOSE_PAR? COLON NEWLINE tab_block
+    : FOR OPEN_PAR conditional CLOSE_PAR COLON NEWLINE tab_block
+    | FOR conditional COLON NEWLINE tab_block
     ;
 
 // print calls
@@ -55,7 +67,7 @@ for_block
 function
     : 'str' OPEN_PAR expr CLOSE_PAR 
     | 'int' OPEN_PAR expr CLOSE_PAR
-    | 'range' OPEN_PAR expr CLOSE_PAR
+    | 'range' OPEN_PAR (expr',')*expr CLOSE_PAR
     | 'print' OPEN_PAR expr CLOSE_PAR
     ;
 
@@ -92,11 +104,10 @@ conditional
 
 // Assignment operators (=, +=, -=, *=, /=, ^=, %=)
 assignment
-    : VAR (ASSIGN | INCREMENT | DECREMENT | MULT_EQ | DIV_EQ | POW_EQ | MOD_EQ) expr
+    : VAR WHITESPACE* (ASSIGN | INCREMENT | DECREMENT | MULT_EQ | DIV_EQ | POW_EQ | MOD_EQ) WHITESPACE* expr
     ;
 
-// Support for comments 
-commment: COMMENT;
+
 
 // BONUS #1: Syntax error message (this is where we did the accept/reject string. If the given code aka. grammar is not a Python language, reject it.
 // In other words, throw a syntax error message.)
@@ -130,11 +141,14 @@ FLOAT:                         // Either have  """.""" or """. numbers for float
     ;
 NUMBER: INT | FLOAT;
 
-STRING: '"' [a-zA-Z_0-9]* '"';
+STRING: '"'(.)*?'"';
 // Defining whitespace and newlines
-WHITESPACE: (' ' | NEWLINE | TAB) ;
-NEWLINE: '\n';
-TAB: '\t';
+// Include carriage return and CR+LF for windows, unix, and OSX
+WHITESPACE: (' '+ | TAB) ;
+
+NEWLINE: '\r\n' | '\n' | '\r' ;
+
+TAB: '\t'+;
 
 // Defining colons, parenthesis, brackets
 COLON: ':';
@@ -190,7 +204,7 @@ NOT: 'not';
 
 // Support for comments 
 
-COMMENT: '#' ~[\r\n\f]*;       // Anything after a # except a carriage return, new line, form feed 
+COMMENT: '#' ~[\r\n]*;       // Anything after a # except a carriage return, new line, form feed 
 
 
 // expression

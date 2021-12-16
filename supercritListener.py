@@ -1,4 +1,4 @@
-# Generated from supercrit.g4 by ANTLR 4.9.2
+# Generated from supercrit.g4 by ANTLR 4.9.3
 from antlr4 import *
 if __name__ is not None and "." in __name__:
     from .supercritParser import supercritParser
@@ -32,6 +32,15 @@ class supercritListener(ParseTreeListener):
 
     # Exit a parse tree produced by supercritParser#line.
     def exitLine(self, ctx:supercritParser.LineContext):
+        pass
+
+
+    # Enter a parse tree produced by supercritParser#comment.
+    def enterComment(self, ctx:supercritParser.CommentContext):
+        pass
+
+    # Exit a parse tree produced by supercritParser#comment.
+    def exitComment(self, ctx:supercritParser.CommentContext):
         pass
 
 
@@ -71,12 +80,12 @@ class supercritListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by supercritParser#print.
-    def enterPrint(self, ctx:supercritParser.PrintContext):
+    # Enter a parse tree produced by supercritParser#function.
+    def enterFunction(self, ctx:supercritParser.FunctionContext):
         pass
 
-    # Exit a parse tree produced by supercritParser#print.
-    def exitPrint(self, ctx:supercritParser.PrintContext):
+    # Exit a parse tree produced by supercritParser#function.
+    def exitFunction(self, ctx:supercritParser.FunctionContext):
         pass
 
 
