@@ -44,15 +44,6 @@ class supercritListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by supercritParser#tab_block.
-    def enterTab_block(self, ctx:supercritParser.Tab_blockContext):
-        pass
-
-    # Exit a parse tree produced by supercritParser#tab_block.
-    def exitTab_block(self, ctx:supercritParser.Tab_blockContext):
-        pass
-
-
     # Enter a parse tree produced by supercritParser#if_block.
     def enterIf_block(self, ctx:supercritParser.If_blockContext):
         pass

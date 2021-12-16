@@ -6,10 +6,13 @@ from supercritLexer import supercritLexer
 from supercritParser import supercritParser
 from antlr4.tree.Trees import Trees
 
-def visualize_parse_tree(expression):
-    for node in expression.getChildren():
-        if isinstance(node, antlr4.TerminalNode):
-                print('terminal')
+def traverse_tree(node):
+    print(Trees.getNodeText(node))
+    if isinstance(node, antlr4.TerminalNode):
+        return
+
+    for children in Trees.getChildren(node):
+        traverse_tree(children)
 
 def main():
     # test the parser with an input
@@ -19,8 +22,9 @@ def main():
     tokens = antlr4.CommonTokenStream(lexer)
     parser = supercritParser(tokens)
     tree = parser.start()
+    #traverse_tree(tree)
     print(Trees.toStringTree(tree, None, parser))
-    parser.start()
+    #parser.start()
 
 if __name__ == '__main__':
     main()

@@ -40,12 +40,9 @@ comment: COMMENT;
 // if/else blocks
 // I want to define a tab block that will be used for if,while, and for loops. It is a tab followed by a line any number of times.
 
-tab_block
-    : (TAB block)+;
-
 if_block
-    : IF WHITESPACE* OPEN_PAR conditional CLOSE_PAR WHITESPACE* COLON WHITESPACE* NEWLINE tab_block (ELIF WHITESPACE* OPEN_PAR conditional CLOSE_PAR WHITESPACE* COLON WHITESPACE* NEWLINE tab_block)* (ELSE WHITESPACE* COLON WHITESPACE* NEWLINE tab_block)?
-    | IF conditional COLON WHITESPACE* NEWLINE tab_block (ELIF conditional COLON WHITESPACE* NEWLINE tab_block)* (ELSE WHITESPACE* COLON WHITESPACE* NEWLINE tab_block)?
+    : IF WHITESPACE* OPEN_PAR conditional CLOSE_PAR WHITESPACE* COLON WHITESPACE* NEWLINE (TAB block)+ (ELIF WHITESPACE* OPEN_PAR conditional CLOSE_PAR WHITESPACE* COLON WHITESPACE* NEWLINE (TAB block)+)* (ELSE WHITESPACE* COLON WHITESPACE* NEWLINE (TAB block)+)?
+    | IF conditional COLON WHITESPACE* NEWLINE (TAB block)+ (ELIF conditional COLON WHITESPACE* NEWLINE (TAB block)+)* (ELSE WHITESPACE* COLON WHITESPACE* NEWLINE (TAB block)+)?
     ;
 
 // Variable definitions
@@ -53,13 +50,13 @@ if_block
 
 // while and for Loops  
 while_block
-    : WHILE WHITESPACE* OPEN_PAR conditional CLOSE_PAR COLON NEWLINE tab_block
-    | WHILE conditional COLON NEWLINE tab_block
+    : WHILE WHITESPACE* OPEN_PAR conditional CLOSE_PAR COLON NEWLINE (TAB block)+
+    | WHILE conditional COLON NEWLINE (TAB block)+
     ;
 
 for_block
-    : FOR WHITESPACE* OPEN_PAR conditional CLOSE_PAR COLON NEWLINE tab_block
-    | FOR conditional COLON NEWLINE tab_block
+    : FOR WHITESPACE* OPEN_PAR conditional CLOSE_PAR COLON NEWLINE (TAB block)+
+    | FOR conditional COLON NEWLINE (TAB block)+
     ;
 
 // print calls
@@ -154,11 +151,13 @@ FLOAT:                         // Either have  """.""" or """. numbers for float
 STRING: '"'(.)*?'"';
 // Defining whitespace and newlines
 // Include carriage return and CR+LF for windows, unix, and OSX
-WHITESPACE: (' '+ | TAB) ;
+
 
 NEWLINE: '\r\n' | '\n' | '\r' ;
 
-TAB: '\t' | '    ';
+TAB: '\t';
+
+WHITESPACE: (' '+) ;
 
 // Defining colons, parenthesis, brackets
 COLON: ':';
