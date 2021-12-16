@@ -22,14 +22,15 @@ block
     | if_block
     | while_block
     | for_block
+    | NEWLINE
     ;
 
 // A statement will be composed of the project requirements: if, while, for, and line which are expressions with a newline, etc.
 line
-    : assignment   
-    | comment 
-    | NEWLINE
-    | WHITESPACE
+    : assignment NEWLINE
+    | assignment comment NEWLINE
+    | comment NEWLINE
+    | WHITESPACE+ NEWLINE
     | expr NEWLINE 
     ;
 
@@ -40,13 +41,11 @@ comment: COMMENT;
 // I want to define a tab block that will be used for if,while, and for loops. It is a tab followed by a line any number of times.
 
 tab_block
-    : (TAB block)*;
+    : (TAB block)+;
 
 if_block
-    : IF OPEN_PAR? conditional CLOSE_PAR? COLON NEWLINE tab_block (ELIF OPEN_PAR? conditional CLOSE_PAR? COLON NEWLINE tab_block)* (ELSE COLON NEWLINE tab_block)?
-    | IF OPEN_PAR? conditional CLOSE_PAR? COLON NEWLINE tab_block (ELIF conditional COLON NEWLINE tab_block)* (ELSE COLON NEWLINE tab_block)?
-    | IF conditional COLON NEWLINE tab_block (ELIF OPEN_PAR? conditional CLOSE_PAR? COLON NEWLINE tab_block)* (ELSE COLON NEWLINE tab_block)?
-    | IF conditional COLON NEWLINE tab_block (ELIF conditional COLON NEWLINE tab_block)* (ELSE COLON NEWLINE tab_block)?
+    : IF WHITESPACE* OPEN_PAR conditional CLOSE_PAR WHITESPACE* COLON WHITESPACE* NEWLINE tab_block (ELIF WHITESPACE* OPEN_PAR conditional CLOSE_PAR WHITESPACE* COLON WHITESPACE* NEWLINE tab_block)* (ELSE WHITESPACE* COLON WHITESPACE* NEWLINE tab_block)?
+    | IF conditional COLON WHITESPACE* NEWLINE tab_block (ELIF conditional COLON WHITESPACE* NEWLINE tab_block)* (ELSE WHITESPACE* COLON WHITESPACE* NEWLINE tab_block)?
     ;
 
 // Variable definitions
@@ -101,14 +100,14 @@ expr
 // Conditional statements(<, <=, >, >=, ==, !=, and, or, not)
 boolean
     : OPEN_PAR WHITESPACE* expr WHITESPACE* (LESS | LESS_EQ | GREATER | GREATER_EQ | EQUAL | NOT_EQUAL) WHITESPACE* expr WHITESPACE* CLOSE_PAR
-    | WHITESPACE* expr WHITESPACE* (LESS | LESS_EQ | GREATER | GREATER_EQ | EQUAL | NOT_EQUAL) WHITESPACE* expr WHITESPACE*
+    | expr WHITESPACE* (LESS | LESS_EQ | GREATER | GREATER_EQ | EQUAL | NOT_EQUAL) WHITESPACE* expr
     | TRUE
     | FALSE
     ;
 
 conditional
-    : WHITESPACE* (boolean WHITESPACE* AND WHITESPACE*)* boolean WHITESPACE*
-    | WHITESPACE* (boolean WHITESPACE* OR WHITESPACE*)* boolean WHITESPACE*
+    : WHITESPACE* (boolean WHITESPACE* AND WHITESPACE*)+ boolean WHITESPACE*
+    | WHITESPACE* (boolean WHITESPACE* OR WHITESPACE*)+ boolean WHITESPACE*
     | WHITESPACE* boolean WHITESPACE*
     | WHITESPACE* NOT WHITESPACE* boolean WHITESPACE*
     ;
@@ -116,7 +115,7 @@ conditional
 
 // Assignment operators (=, +=, -=, *=, /=, ^=, %=)
 assignment
-    : VAR WHITESPACE* (ASSIGN | INCREMENT | DECREMENT | MULT_EQ | DIV_EQ | POW_EQ | MOD_EQ) WHITESPACE* expr
+    : VAR WHITESPACE* (ASSIGN | INCREMENT | DECREMENT | MULT_EQ | DIV_EQ | POW_EQ | MOD_EQ) WHITESPACE* expr 
     ;
 
 
@@ -159,7 +158,7 @@ WHITESPACE: (' '+ | TAB) ;
 
 NEWLINE: '\r\n' | '\n' | '\r' ;
 
-TAB: '\t'+;
+TAB: '\t' | '    ';
 
 // Defining colons, parenthesis, brackets
 COLON: ':';
@@ -179,9 +178,6 @@ FOR: 'for';
 BREAK: 'break';
 CONTINUE: 'continue';
 
-// Variable definitions- Rules for Python variables: must start with a letter or underscore character. cannot start with a number fragment
-// case sensitive, only alpha-numeric A-z, 0-9
-VAR: [a-zA-Z_] [a-zA-Z_0-9]*;
 // Arithmetic operators (+, -, *, /, %, ^)  
 
 PLUS: '+';
@@ -217,8 +213,11 @@ TRUE: 'True';
 FALSE: 'False';
 
 // Support for comments 
-
 COMMENT: '#' ~[\r\n]*;       // Anything after a # except a carriage return, new line, form feed 
+
+// Variable definitions- Rules for Python variables: must start with a letter or underscore character. cannot start with a number fragment
+// case sensitive, only alpha-numeric A-z, 0-9
+VAR: [a-zA-Z_] [a-zA-Z_0-9]*;
 
 
 // expression
