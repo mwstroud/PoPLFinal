@@ -107,6 +107,15 @@ class supercritListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by supercritParser#boolean.
+    def enterBoolean(self, ctx:supercritParser.BooleanContext):
+        pass
+
+    # Exit a parse tree produced by supercritParser#boolean.
+    def exitBoolean(self, ctx:supercritParser.BooleanContext):
+        pass
+
+
     # Enter a parse tree produced by supercritParser#conditional.
     def enterConditional(self, ctx:supercritParser.ConditionalContext):
         pass

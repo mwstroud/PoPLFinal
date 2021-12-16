@@ -29,7 +29,8 @@ line
     : assignment   
     | comment 
     | NEWLINE
-    | WHITESPACE 
+    | WHITESPACE
+    | expr NEWLINE 
     ;
 
 // Support for comments 
@@ -39,7 +40,7 @@ comment: COMMENT;
 // I want to define a tab block that will be used for if,while, and for loops. It is a tab followed by a line any number of times.
 
 tab_block
-    : (TAB line)*;
+    : (TAB block)*;
 
 if_block
     : IF OPEN_PAR? conditional CLOSE_PAR? COLON NEWLINE tab_block (ELIF OPEN_PAR? conditional CLOSE_PAR? COLON NEWLINE tab_block)* (ELSE COLON NEWLINE tab_block)?
@@ -89,22 +90,29 @@ expr
     | INT
     | FLOAT
     | STRING
+    | function
     | expr POW expr
     | expr (TIMES | DIV) expr
     | expr (PLUS | MINUS) expr
     | expr MOD expr  
     | expr (EQUAL | NOT_EQUAL) expr
-    | expr AND expr 
-    | expr OR expr
-    | expr NOT expr
     ;
 
 // Conditional statements(<, <=, >, >=, ==, !=, and, or, not)
-conditional
-    : WHITESPACE* expr WHITESPACE* (LESS | LESS_EQ | GREATER | GREATER_EQ | EQUAL) WHITESPACE* expr WHITESPACE*
-    | conditional AND conditional
-    | conditional OR conditional
+boolean
+    : OPEN_PAR WHITESPACE* expr WHITESPACE* (LESS | LESS_EQ | GREATER | GREATER_EQ | EQUAL | NOT_EQUAL) WHITESPACE* expr WHITESPACE* CLOSE_PAR
+    | WHITESPACE* expr WHITESPACE* (LESS | LESS_EQ | GREATER | GREATER_EQ | EQUAL | NOT_EQUAL) WHITESPACE* expr WHITESPACE*
+    | TRUE
+    | FALSE
     ;
+
+conditional
+    : WHITESPACE* (boolean WHITESPACE* AND WHITESPACE*)* boolean WHITESPACE*
+    | WHITESPACE* (boolean WHITESPACE* OR WHITESPACE*)* boolean WHITESPACE*
+    | WHITESPACE* boolean WHITESPACE*
+    | WHITESPACE* NOT WHITESPACE* boolean WHITESPACE*
+    ;
+
 
 // Assignment operators (=, +=, -=, *=, /=, ^=, %=)
 assignment
@@ -205,6 +213,8 @@ NOT_EQUAL: '!=';
 AND: 'and';
 OR: 'or';
 NOT: 'not';
+TRUE: 'True';
+FALSE: 'False';
 
 // Support for comments 
 
