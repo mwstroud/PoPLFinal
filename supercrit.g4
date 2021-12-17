@@ -1,36 +1,12 @@
 // Grammar developed for PoPL: CS 4450 Final Project
 // team: supercritical pitchfork ;   members: Pete Canfield, Chloe Jones, Matt Stroud
-// 12/15/21
+// CS 4450
+// 12/16/21
 
 // Grammar for Antlr4 on Python3 target
 
 grammar supercrit;
 
-// DenterHelper is an open source package to act as an indentation counter https://github.com/yshavit/antlr-denter
-tokens { INDENT, DEDENT }
-
-@lexer::header {
-  import com.yuvalshavit.antlr4.DenterHelper;
-}
-
-@lexer::members {
-  private final DenterHelper denter = new DenterHelper(NL,
-                                                       MyCoolParser.INDENT,
-                                                       MyCoolParser.DEDENT)
-  {
-    @Override
-    public Token pullToken() {
-      return MyCoolLexer.super.nextToken();
-    }
-  };
-
-  @Override
-  public Token nextToken() {
-    return denter.nextToken();
-  }
-}
-
-NEWLINE: ('\r'? '\n' ' '*);
 ////////////////////////////////////////////////////////
 //////////////////// Parser Rules //////////////////////
 ////////////////////////////////////////////////////////
@@ -38,7 +14,6 @@ NEWLINE: ('\r'? '\n' ' '*);
 // Defines the relations between the tokens 
 // Base of the entire parser is the start which is composed of a block and then the end-of-file
 start: block* EOF ;
-
 
 // A block will be the most general Python3 code which will be any number of statements strung together
 block
@@ -52,12 +27,13 @@ block
 
 // A statement will be composed of the project requirements: if, while, for, and line which are expressions with a newline, etc.
 line
-    : assignment NEWLINE
+    : assignment
     | assignment comment NEWLINE
-    | comment NEWLINE
+    | comment NEWLINE?
     | WHITESPACE+ NEWLINE
     | expr NEWLINE
     | NEWLINE
+    | TAB
     ;
 
 // Support for comments 
@@ -66,12 +42,12 @@ comment: COMMENT;
 // if/else blocks
 // I want to define a tab block that will be used for if,while, and for loops. It is a tab followed by a line any number of times.
 tab_block
-    : INDENT block DEDENT
+    : (TAB block)+ 
     ;
 
 if_block
-    : IF WHITESPACE* OPEN_PAR conditional CLOSE_PAR WHITESPACE* COLON NEWLINE tab_block 
-    | IF conditional COLON NEWLINE tab_block 
+    : IF OPEN_PAR conditional CLOSE_PAR WHITESPACE* COLON NEWLINE tab_block 
+    | IF conditional COLON NEWLINE tab_block
     ;
 elif_block
     : ELIF WHITESPACE* OPEN_PAR conditional CLOSE_PAR WHITESPACE* COLON NEWLINE tab_block
@@ -82,7 +58,7 @@ else_block
     | ELSE WHITESPACE* COLON NEWLINE tab_block
     ;
 
-// Variable definitions
+// Variable definitions (Lexer Rule)
 
 
 // while and for Loops  
@@ -92,44 +68,33 @@ while_block
     ;
 
 for_block
-    : FOR WHITESPACE* VAR WHITESPACE* IN WHITESPACE* (VAR | function) COLON NEWLINE tab_block
+    : FOR WHITESPACE* VAR WHITESPACE* IN WHITESPACE* function COLON NEWLINE tab_block
     ;
 
-// print calls
+// Functions
 
 function
     : 'str' OPEN_PAR expr CLOSE_PAR 
     | 'int' OPEN_PAR expr CLOSE_PAR
-    | 'range' OPEN_PAR (expr',')*expr CLOSE_PAR
+    | 'range' OPEN_PAR expr ',' WHITESPACE expr CLOSE_PAR
     | 'print' OPEN_PAR expr CLOSE_PAR
     | BREAK
     | CONTINUE
     ;
 
-// operate-able items (int, float, and string). int and float can have any operator act on them. string can just have addition.
-
-
 // Arithmetic operators (+, -, *, /, %, ^)
-statement
-    : expr
-    | conditional
-    | assignment
-    ;
-
-////////////////////////////////////////////////// Need to define that an expression is composed of strings or ints or floats.
 
 expr
-    : '-' expr
-    | VAR
+    : VAR
     | INT
     | FLOAT
     | STRING
     | function
-    | expr POW expr
-    | expr (TIMES | DIV) expr
-    | expr (PLUS | MINUS) expr
-    | expr MOD expr  
-    | expr (EQUAL | NOT_EQUAL) expr
+    | expr WHITESPACE* POW WHITESPACE* expr
+    | expr WHITESPACE* (TIMES | DIV) WHITESPACE* expr
+    | expr WHITESPACE* (PLUS | MINUS) WHITESPACE* expr
+    | expr WHITESPACE* MOD WHITESPACE* expr  
+    | expr WHITESPACE* (EQUAL | NOT_EQUAL) WHITESPACE* expr
     ;
 
 // Conditional statements(<, <=, >, >=, ==, !=, and, or, not)
@@ -189,13 +154,13 @@ FLOAT:                         // Either have  """.""" or """. numbers for float
     ;
 
 STRING: '"'(.)*?'"';
+
+
 // Defining whitespace and newlines
 // Include carriage return and CR+LF for windows, unix, and OSX
+NEWLINE: '\r\n' | '\n' | '\r' ;
 
-
-//NEWLINE: '\r\n' | '\n' | '\r' ;
-
-//TAB: '\t'+ | '    '+;
+TAB: '\t'+ | '    '+;
 
 WHITESPACE: (' '+) ;
 
@@ -252,17 +217,9 @@ TRUE: 'True';
 FALSE: 'False';
 
 // Support for comments 
-COMMENT: '#' ~[\r\n]*;       // Anything after a # except a carriage return, new line, form feed 
+COMMENT: '#' ~[\r\n]*;       // Anything after a # except a carriage return, new line
 
 // Variable definitions- Rules for Python variables: must start with a letter or underscore character. cannot start with a number fragment
 // case sensitive, only alpha-numeric A-z, 0-9
 VAR: [a-zA-Z_] [a-zA-Z_0-9]*;
 
-
-// expression
-//    : multiplyingExpression ((PLUS | MINUS) multiplyingExpression)*
-//    ;
-
-// multiplyingExpression
-//    : number ((TIMES | DIV) number)*
-//    ;
