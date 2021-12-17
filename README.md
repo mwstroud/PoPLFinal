@@ -1,29 +1,48 @@
 # PoPLFinal
 
-12/15/21
+12/16/21
 CS 4450
 Pete Canfield, Chloe Jones, Matt Stroud
 
-Antlr4 grammar defines lexer and parser rules for Python3 target language.
-The lexer and parser are also defined so that it can parse Python3 code. An example script is provided for testing.
+Antlr4 grammar defines lexer and parser rules for Java target language.
+The lexer and parser are also defined so that it can parse Python3 code.
 
-#### Requirements:
-Java 17<
-antlr4 latest .jar file
-```
-pip install antlr4-python3-runtime
-```
+## Requirements:
+### Java 
 
-#### How to run
-First, you must generate the Lexer and Parser from the .g4 grammar file.
-```
-java org.antlr.v4.Tool supercrit.g4
-```
-or if you have created an alias for java org.antlr.v4.Tool, you can call that.
-The files that are generated from this command are already included in the repository.
+First, users must install the latest version of Java to their local machine. Java can be downloaded and installed [here](https://www.java.com/en/download/manual.jsp).
 
-Next, run the main script on the testing code to see if the grammar works.
+### Antlr
+This project uses ANTLR to generate the Java lexer and parser. The install insructions can be found [here](https://levlaz.org/setting-up-antlr4-on-windows/) and are tailored for OSX, Unix, and Windows operating systems.
 
+###Visual Studio Code ANTLR pluggin.
+This project additionally uses Visual Studio Code's ANTLR pluggin for visualization of the grammar parse tree. This requires the user to install the ANTLR extension from the VSCode Marketplace. Additional Documentation can be found [here](https://github.com/mike-lischke/vscode-antlr4/blob/master/doc/grammar-debugging.md).
+
+The VSCode Debug `launch.json` file should be the same as follows:
+```
+{
+    "version": "2.0.0",
+    "configurations": [
+        {
+            "name": "Debug ANTLR4 grammar",
+            "type": "antlr-debug",
+            "request": "launch",
+            "input": "python_test_code.py",
+            "grammar": "supercrit.g4",
+            "startRule": "start",
+            "printParseTree": true,
+            "visualParseTree": true
+        }
+    ]
+}
+```
 
 #### Generating the Parse Tree
-...
+After creating the necissary alias from the instructions above, you must generate the Lexer and Parser from the `supercrit.g4` grammar file.
+
+```
+antlr4 supercrit.g4
+```
+
+Next Generate the parse tree using the installed VSCode extension. This can be done by pressing f5 (by running the debugger) when the grammar file is open.
+
