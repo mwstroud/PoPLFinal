@@ -1,4 +1,4 @@
-# Generated from supercrit.g4 by ANTLR 4.9.3
+# Generated from supercrit.g4 by ANTLR 4.9.2
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
@@ -278,12 +278,12 @@ class supercritParser ( Parser ):
 
     literalNames = [ "<INVALID>", "'str'", "'int'", "'range'", "','", "'print'", 
                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "'\t'", "<INVALID>", "':'", "'('", "')'", "'['", "']'", 
-                     "'if'", "'elif'", "'else'", "'while'", "'for'", "'break'", 
-                     "'continue'", "'+'", "'-'", "'*'", "'/'", "'%'", "'**'", 
-                     "'='", "'+='", "'-='", "'*='", "'/='", "'**='", "'%='", 
-                     "'<'", "'<='", "'>'", "'>='", "'=='", "'!='", "'and'", 
-                     "'or'", "'not'", "'True'", "'False'" ]
+                     "<INVALID>", "<INVALID>", "':'", "'('", "')'", "'['", 
+                     "']'", "'if'", "'elif'", "'else'", "'while'", "'for'", 
+                     "'break'", "'continue'", "'+'", "'-'", "'*'", "'/'", 
+                     "'%'", "'**'", "'='", "'+='", "'-='", "'*='", "'/='", 
+                     "'**='", "'%='", "'<'", "'<='", "'>'", "'>='", "'=='", 
+                     "'!='", "'and'", "'or'", "'not'", "'True'", "'False'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "INT", "FLOAT", "STRING", 
@@ -306,12 +306,12 @@ class supercritParser ( Parser ):
     RULE_function = 7
     RULE_statement = 8
     RULE_expr = 9
-    RULE_boolean = 10
+    RULE_bool = 10
     RULE_conditional = 11
     RULE_assignment = 12
 
     ruleNames =  [ "start", "block", "line", "comment", "if_block", "while_block", 
-                   "for_block", "function", "statement", "expr", "boolean", 
+                   "for_block", "function", "statement", "expr", "bool", 
                    "conditional", "assignment" ]
 
     EOF = Token.EOF
@@ -367,7 +367,7 @@ class supercritParser ( Parser ):
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
-        self.checkVersion("4.9.3")
+        self.checkVersion("4.9.2")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
 
@@ -1771,7 +1771,7 @@ class supercritParser ( Parser ):
         return localctx
 
 
-    class BooleanContext(ParserRuleContext):
+    class BoolContext(ParserRuleContext):
         __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -1822,23 +1822,23 @@ class supercritParser ( Parser ):
             return self.getToken(supercritParser.FALSE, 0)
 
         def getRuleIndex(self):
-            return supercritParser.RULE_boolean
+            return supercritParser.RULE_bool
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterBoolean" ):
-                listener.enterBoolean(self)
+            if hasattr( listener, "enterBool" ):
+                listener.enterBool(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitBoolean" ):
-                listener.exitBoolean(self)
+            if hasattr( listener, "exitBool" ):
+                listener.exitBool(self)
 
 
 
 
-    def boolean(self):
+    def bool(self):
 
-        localctx = supercritParser.BooleanContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 20, self.RULE_boolean)
+        localctx = supercritParser.BoolContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 20, self.RULE_bool)
         self._la = 0 # Token type
         try:
             self.state = 387
@@ -1965,11 +1965,11 @@ class supercritParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def boolean(self, i:int=None):
+        def bool(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(supercritParser.BooleanContext)
+                return self.getTypedRuleContexts(supercritParser.BoolContext)
             else:
-                return self.getTypedRuleContext(supercritParser.BooleanContext,i)
+                return self.getTypedRuleContext(supercritParser.BoolContext,i)
 
 
         def WHITESPACE(self, i:int=None):
@@ -2034,7 +2034,7 @@ class supercritParser ( Parser ):
                 while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                     if _alt == 1:
                         self.state = 395
-                        self.boolean()
+                        self.bool()
                         self.state = 399
                         self._errHandler.sync(self)
                         _la = self._input.LA(1)
@@ -2065,7 +2065,7 @@ class supercritParser ( Parser ):
                     _alt = self._interp.adaptivePredict(self._input,51,self._ctx)
 
                 self.state = 413
-                self.boolean()
+                self.bool()
                 self.state = 417
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
@@ -2096,7 +2096,7 @@ class supercritParser ( Parser ):
                 while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                     if _alt == 1:
                         self.state = 426
-                        self.boolean()
+                        self.bool()
                         self.state = 430
                         self._errHandler.sync(self)
                         _la = self._input.LA(1)
@@ -2127,7 +2127,7 @@ class supercritParser ( Parser ):
                     _alt = self._interp.adaptivePredict(self._input,56,self._ctx)
 
                 self.state = 444
-                self.boolean()
+                self.bool()
                 self.state = 448
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
@@ -2153,7 +2153,7 @@ class supercritParser ( Parser ):
                     _la = self._input.LA(1)
 
                 self.state = 457
-                self.boolean()
+                self.bool()
                 self.state = 461
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
@@ -2191,7 +2191,7 @@ class supercritParser ( Parser ):
                     _la = self._input.LA(1)
 
                 self.state = 477
-                self.boolean()
+                self.bool()
                 self.state = 481
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)

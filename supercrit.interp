@@ -9,7 +9,7 @@ null
 null
 null
 null
-'\t'
+null
 null
 ':'
 '('
@@ -113,7 +113,7 @@ for_block
 function
 statement
 expr
-boolean
+bool
 conditional
 assignment
 

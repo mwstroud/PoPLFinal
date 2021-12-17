@@ -1,4 +1,4 @@
-// Generated from c:\Users\Admin\Documents\courses\PoPL\Final\PoPLFinal\supercrit.g4 by ANTLR 4.8
+// Generated from supercrit.g4 by ANTLR 4.9.2
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class supercritParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.8", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.9.2", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -38,7 +38,7 @@ public class supercritParser extends Parser {
 	private static String[] makeLiteralNames() {
 		return new String[] {
 			null, "'str'", "'int'", "'range'", "','", "'print'", null, null, null, 
-			null, null, null, "':'", "'('", "')'", "'['", "']'", "'if'", "'elif'", 
+			null, "'\t'", null, "':'", "'('", "')'", "'['", "']'", "'if'", "'elif'", 
 			"'else'", "'while'", "'for'", "'break'", "'continue'", "'+'", "'-'", 
 			"'*'", "'/'", "'%'", "'**'", "'='", "'+='", "'-='", "'*='", "'/='", "'**='", 
 			"'%='", "'<'", "'<='", "'>'", "'>='", "'=='", "'!='", "'and'", "'or'", 
@@ -120,6 +120,14 @@ public class supercritParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_start; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof supercritListener ) ((supercritListener)listener).enterStart(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof supercritListener ) ((supercritListener)listener).exitStart(this);
+		}
 	}
 
 	public final StartContext start() throws RecognitionException {
@@ -176,6 +184,14 @@ public class supercritParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_block; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof supercritListener ) ((supercritListener)listener).enterBlock(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof supercritListener ) ((supercritListener)listener).exitBlock(this);
+		}
 	}
 
 	public final BlockContext block() throws RecognitionException {
@@ -264,6 +280,14 @@ public class supercritParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_line; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof supercritListener ) ((supercritListener)listener).enterLine(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof supercritListener ) ((supercritListener)listener).exitLine(this);
+		}
 	}
 
 	public final LineContext line() throws RecognitionException {
@@ -352,6 +376,14 @@ public class supercritParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_comment; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof supercritListener ) ((supercritListener)listener).enterComment(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof supercritListener ) ((supercritListener)listener).exitComment(this);
+		}
 	}
 
 	public final CommentContext comment() throws RecognitionException {
@@ -422,6 +454,14 @@ public class supercritParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_if_block; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof supercritListener ) ((supercritListener)listener).enterIf_block(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof supercritListener ) ((supercritListener)listener).exitIf_block(this);
+		}
 	}
 
 	public final If_blockContext if_block() throws RecognitionException {
@@ -879,6 +919,14 @@ public class supercritParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_while_block; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof supercritListener ) ((supercritListener)listener).enterWhile_block(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof supercritListener ) ((supercritListener)listener).exitWhile_block(this);
+		}
 	}
 
 	public final While_blockContext while_block() throws RecognitionException {
@@ -1018,6 +1066,14 @@ public class supercritParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_for_block; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof supercritListener ) ((supercritListener)listener).enterFor_block(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof supercritListener ) ((supercritListener)listener).exitFor_block(this);
+		}
 	}
 
 	public final For_blockContext for_block() throws RecognitionException {
@@ -1143,6 +1199,14 @@ public class supercritParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_function; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof supercritListener ) ((supercritListener)listener).enterFunction(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof supercritListener ) ((supercritListener)listener).exitFunction(this);
+		}
 	}
 
 	public final FunctionContext function() throws RecognitionException {
@@ -1252,6 +1316,14 @@ public class supercritParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_statement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof supercritListener ) ((supercritListener)listener).enterStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof supercritListener ) ((supercritListener)listener).exitStatement(this);
+		}
 	}
 
 	public final StatementContext statement() throws RecognitionException {
@@ -1321,6 +1393,14 @@ public class supercritParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_expr; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof supercritListener ) ((supercritListener)listener).enterExpr(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof supercritListener ) ((supercritListener)listener).exitExpr(this);
+		}
 	}
 
 	public final ExprContext expr() throws RecognitionException {
@@ -1527,6 +1607,14 @@ public class supercritParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_bool; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof supercritListener ) ((supercritListener)listener).enterBool(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof supercritListener ) ((supercritListener)listener).exitBool(this);
+		}
 	}
 
 	public final BoolContext bool() throws RecognitionException {
@@ -1724,6 +1812,14 @@ public class supercritParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_conditional; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof supercritListener ) ((supercritListener)listener).enterConditional(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof supercritListener ) ((supercritListener)listener).exitConditional(this);
+		}
 	}
 
 	public final ConditionalContext conditional() throws RecognitionException {
@@ -2024,6 +2120,14 @@ public class supercritParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_assignment; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof supercritListener ) ((supercritListener)listener).enterAssignment(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof supercritListener ) ((supercritListener)listener).exitAssignment(this);
+		}
 	}
 
 	public final AssignmentContext assignment() throws RecognitionException {

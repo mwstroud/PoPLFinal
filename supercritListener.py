@@ -1,4 +1,4 @@
-# Generated from supercrit.g4 by ANTLR 4.9.3
+# Generated from supercrit.g4 by ANTLR 4.9.2
 from antlr4 import *
 if __name__ is not None and "." in __name__:
     from .supercritParser import supercritParser
@@ -98,12 +98,12 @@ class supercritListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by supercritParser#boolean.
-    def enterBoolean(self, ctx:supercritParser.BooleanContext):
+    # Enter a parse tree produced by supercritParser#bool.
+    def enterBool(self, ctx:supercritParser.BoolContext):
         pass
 
-    # Exit a parse tree produced by supercritParser#boolean.
-    def exitBoolean(self, ctx:supercritParser.BooleanContext):
+    # Exit a parse tree produced by supercritParser#bool.
+    def exitBool(self, ctx:supercritParser.BoolContext):
         pass
 
 

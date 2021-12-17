@@ -95,7 +95,7 @@ expr
     ;
 
 // Conditional statements(<, <=, >, >=, ==, !=, and, or, not)
-boolean
+bool
     : OPEN_PAR WHITESPACE* expr WHITESPACE* (LESS | LESS_EQ | GREATER | GREATER_EQ | EQUAL | NOT_EQUAL) WHITESPACE* expr WHITESPACE* CLOSE_PAR
     | expr WHITESPACE* (LESS | LESS_EQ | GREATER | GREATER_EQ | EQUAL | NOT_EQUAL) WHITESPACE* expr
     | TRUE
@@ -103,10 +103,10 @@ boolean
     ;
 
 conditional
-    : WHITESPACE* (boolean WHITESPACE* AND WHITESPACE*)+ boolean WHITESPACE*
-    | WHITESPACE* (boolean WHITESPACE* OR WHITESPACE*)+ boolean WHITESPACE*
-    | WHITESPACE* boolean WHITESPACE*
-    | WHITESPACE* NOT WHITESPACE* boolean WHITESPACE*
+    : WHITESPACE* (bool WHITESPACE* AND WHITESPACE*)+ bool WHITESPACE*
+    | WHITESPACE* (bool WHITESPACE* OR WHITESPACE*)+ bool WHITESPACE*
+    | WHITESPACE* bool WHITESPACE*
+    | WHITESPACE* NOT WHITESPACE* bool WHITESPACE*
     ;
 
 
@@ -155,7 +155,7 @@ STRING: '"'(.)*?'"';
 
 NEWLINE: '\r\n' | '\n' | '\r' ;
 
-TAB: '\t';
+TAB: '\t'+ | '    '+;
 
 WHITESPACE: (' '+) ;
 
